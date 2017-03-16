@@ -18090,26 +18090,6 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
     </p><div class="param">
-     images (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductImage">
-       array[ProductImage]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     videos (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductVideo">
-       array[ProductVideo]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
      custom_fields (optional)
     </div>
     <div class="param-desc">
@@ -18767,26 +18747,6 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
-    </div>
-    </p><div class="param">
-     images (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductImage">
-       array[ProductImage]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     videos (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductVideo">
-       array[ProductVideo]
-      </a>
-     </span>
     </div>
     </p><div class="param">
      custom_fields (optional)
