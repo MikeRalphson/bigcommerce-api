@@ -1,11 +1,14 @@
-# v3 Catalog API Documentation
+# v3 API Documentation
 
 _Welcome! Please note that this API is in our partner-release stage, which means that in the short term, we'll be iterating on feedback from partners. Our goal is to make sure that all concerns are addressed, and that we reach our goal of creating the most powerful, easiest-to-use catalog API in ecommerce. Because of this iterative approach, please expect small changes and many additions to occur._
 
-**Have suggestions, feedback or questions? Submit them as an issue here:** 
+**Have suggestions, feedback or questions? Submit them as an issue here:**  
 https://github.com/bigcommerce/api/issues
 
-**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
+**Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:**  
+https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
+
+**Jump directly to: [API Reference](#api_ref)**
 
 ## Access and Authentication
 
@@ -410,29 +413,17 @@ When you create a product, we'll automatically return variants in the response:
 You can include sub-resources on a product, as a comma-separated list, by using `include={sub-resources}` as a query string. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`. For instance, if you wanted variants and custom fields to also return in the product response, you'd GET: 
 https://api.bigcommerce.com/stores/{store-hash}/v3/catalog/products?include=variants,custom_fields
 
-# v3 Catalog API Reference
+# <a name="api_ref"></a> v3 API Reference
 
-Please view the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+Please view the documentation generated from the Swagger file in YAML format [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-api.yaml).
 
 <html>
- <head>
-  <title>
-   BigCommerce Catalog API
-  </title>
- </head>
- <body>
-  <h1>
-   BigCommerce Catalog API
-  </h1>
-  <div class="app-desc">
-   A Swagger Document for the BigCommmerce API V3.
-  </div>
   <h2>
    <a name="__Methods">
     Methods/Endpoints
    </a>
   </h2>
-  [ Jump to
+  [ Jump to:
   <a href="#__Models">
    Models
   </a>
@@ -529,6 +520,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#createCustomField">
+     <code>
+      <span class="http-method">
+       post
+      </span>
+      /catalog/products/{product_id}/custom-fields
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#createModifier">
      <code>
       <span class="http-method">
@@ -549,12 +550,32 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#createModifierValue">
+     <code>
+      <span class="http-method">
+       post
+      </span>
+      /catalog/products/{product_id}/modifiers/{modifier_id}/values
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#createOption">
      <code>
       <span class="http-method">
        post
       </span>
       /catalog/products/{product_id}/options
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#createOptionValue">
+     <code>
+      <span class="http-method">
+       post
+      </span>
+      /catalog/products/{product_id}/options/{option_id}/values
      </code>
     </a>
    </li>
@@ -719,6 +740,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#deleteCustomFieldById">
+     <code>
+      <span class="http-method">
+       delete
+      </span>
+      /catalog/products/{product_id}/custom-fields/{custom_field_id}
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#deleteModifierById">
      <code>
       <span class="http-method">
@@ -739,12 +770,32 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#deleteModifierValueById">
+     <code>
+      <span class="http-method">
+       delete
+      </span>
+      /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#deleteOptionById">
      <code>
       <span class="http-method">
        delete
       </span>
       /catalog/products/{product_id}/options/{option_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#deleteOptionValueById">
+     <code>
+      <span class="http-method">
+       delete
+      </span>
+      /catalog/products/{product_id}/options/{option_id}/values/{value_id}
      </code>
     </a>
    </li>
@@ -929,12 +980,52 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#getCustomFieldById">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/custom-fields/{custom_field_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#getCustomFields">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/custom-fields
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#getModifierById">
      <code>
       <span class="http-method">
        get
       </span>
       /catalog/products/{product_id}/modifiers/{modifier_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#getModifierValueById">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#getModifierValues">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/modifiers/{modifier_id}/values
      </code>
     </a>
    </li>
@@ -955,6 +1046,26 @@ Please view the documentation generated from the Swagger file [here](http://edit
        get
       </span>
       /catalog/products/{product_id}/options/{option_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#getOptionValueById">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/options/{option_id}/values/{value_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#getOptionValues">
+     <code>
+      <span class="http-method">
+       get
+      </span>
+      /catalog/products/{product_id}/options/{option_id}/values
      </code>
     </a>
    </li>
@@ -1149,6 +1260,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#updateCustomField">
+     <code>
+      <span class="http-method">
+       put
+      </span>
+      /catalog/products/{product_id}/custom-fields/{custom_field_id}
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#updateModifier">
      <code>
       <span class="http-method">
@@ -1159,12 +1280,32 @@ Please view the documentation generated from the Swagger file [here](http://edit
     </a>
    </li>
    <li>
+    <a href="#updateModifierValue">
+     <code>
+      <span class="http-method">
+       put
+      </span>
+      /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#updateOption">
      <code>
       <span class="http-method">
        put
       </span>
       /catalog/products/{product_id}/options/{option_id}
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#updateOptionValue">
+     <code>
+      <span class="http-method">
+       put
+      </span>
+      /catalog/products/{product_id}/options/{option_id}/values/{value_id}
      </code>
     </a>
    </li>
@@ -1432,11 +1573,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Brand
-     <a href="#Brand">
-      Brand
+     <a href="#BrandPost">
+      BrandPost
      </a>
      (required)
     </div>
@@ -1462,15 +1604,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "meta_description" : "aeiou",
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "name" : "aeiou",
-    "id" : 123,
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -1499,7 +1633,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A brand object
+   A `Brand` object.
    <a href="#BrandResponse">
     BrandResponse
    </a>
@@ -1543,15 +1677,17 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Brand` to which the image is being attached.
+     — The ID of the `Brand` to which the resource belongs.
+ format: int
     </div>
    </div>
    <h3 class="field-label">
@@ -1572,8 +1708,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -1673,8 +1810,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -1703,11 +1841,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPost">
+      MetafieldPost
      </a>
      (required)
     </div>
@@ -1716,29 +1855,6 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Body Parameter
      </span>
      — A `Metafield` object.
-    </div>
-   </div>
-   <h3 class="field-label">
-    Query parameters
-   </h3>
-   <div class="field-items">
-    <div class="param">
-     key (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      Query Parameter
-     </span>
-     — Filter based on a metafield's key.
-    </div>
-    <div class="param">
-     namespace (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      Query Parameter
-     </span>
-     — Filter based on a metafield's key.
     </div>
    </div>
    <h3 class="field-label">
@@ -1756,18 +1872,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -1855,11 +1960,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category
-     <a href="#Category">
-      Category
+     <a href="#CategoryPost">
+      CategoryPost
      </a>
      (required)
     </div>
@@ -1885,26 +1991,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "is_visible" : true,
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "description" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou",
-    "default_product_sort" : "aeiou",
-    "meta_description" : "aeiou",
-    "layout_file" : "aeiou",
-    "parent_id" : 123,
-    "name" : "aeiou",
-    "id" : 123,
-    "sort_order" : 123,
-    "views" : 123,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    }
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -1977,8 +2064,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -2007,8 +2095,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -2108,8 +2197,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -2138,11 +2228,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPost">
+      MetafieldPost
      </a>
      (required)
     </div>
@@ -2168,18 +2259,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -2252,16 +2332,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `ComplexRule` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -2282,11 +2362,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      ComplexRule
-     <a href="#ComplexRule">
-      ComplexRule
+     <a href="#ComplexRulePost">
+      ComplexRulePost
      </a>
      (required)
     </div>
@@ -2294,7 +2375,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
      <span class="param-type">
       Body Parameter
      </span>
-     — `ComplexRule` object
+     — `ComplexRule` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -2312,42 +2393,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "purchasing_hidden" : true,
-    "stop" : true,
-    "price_adjuster" : {
-      "adjuster" : "aeiou",
-      "adjuster_value" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "image_url" : "aeiou",
-    "product_id" : 123,
-    "weight_adjuster" : "",
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "purchasing_disabled_message" : "aeiou",
-    "conditions" : [ {
-      "rule_id" : 123,
-      "variant_id" : 123,
-      "combination_id" : 123,
-      "modifier_id" : 123,
-      "modifier_value_id" : 123,
-      "id" : 123
-    } ],
-    "sort_order" : 123,
-    "enabled" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -2375,7 +2422,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A `ComplexRule` object
+   A `ComplexRule` object.
    <a href="#ComplexRuleResponse">
     ComplexRuleResponse
    </a>
@@ -2390,6 +2437,140 @@ Please view the documentation generated from the Swagger file [here](http://edit
     422
    </h4>
    The `ComplexRule` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
+   <a name="createCustomField">
+   </a>
+   <div class="method-path">
+    <h2 class="post">
+     <span class="http-method">
+      POST
+     </span>
+     /catalog/products/{product_id}/custom-fields
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     createCustomField
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Creates a `CustomField`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     CustomField
+     <a href="#CustomFieldPost">
+      CustomFieldPost
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — `CustomField` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#CustomFieldResponse">
+     CustomFieldResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `CustomField` object.
+   <a href="#CustomFieldResponse">
+    CustomFieldResponse
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The parent resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `CustomField` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -2419,16 +2600,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -2449,11 +2630,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Modifier
-     <a href="#Modifier">
-      Modifier
+     <a href="#ModifierPost">
+      ModifierPost
      </a>
      (required)
     </div>
@@ -2479,53 +2661,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ "" ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    },
-    "required" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -2553,7 +2690,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A modifier object.
+   A `Modifier` object.
    <a href="#ModifierResponse">
     ModifierResponse
    </a>
@@ -2597,18 +2734,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -2617,7 +2755,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -2645,8 +2784,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -2722,40 +2862,50 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </a>
   </div>
   <div class="method">
-   <a name="createOption">
+   <a name="createModifierValue">
    </a>
    <div class="method-path">
     <h2 class="post">
      <span class="http-method">
       POST
      </span>
-     /catalog/products/{product_id}/options
+     /catalog/products/{product_id}/modifiers/{modifier_id}/values
     </h2>
    </div>
    <div class="method-summary">
     (
     <span class="nickname">
-     createOption
+     createModifierValue
     </span>
     )
    </div>
    <br/>
    <div class="method-notes">
-    Creates an `Option`.
+    Creates a `ModifierValue`.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier`.
     </div>
    </div>
    <h3 class="field-label">
@@ -2776,11 +2926,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
-     Option
-     <a href="#Option">
-      Option
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     ModifierValue
+     <a href="#ModifierValuePost">
+      ModifierValuePost
      </a>
      (required)
     </div>
@@ -2788,15 +2939,15 @@ Please view the documentation generated from the Swagger file [here](http://edit
      <span class="param-type">
       Body Parameter
      </span>
-     — An `Option` object.
+     — A `ModifierValue` object.
     </div>
    </div>
    <h3 class="field-label">
     Return type
    </h3>
    <div class="return-type">
-    <a href="#OptionResponse">
-     OptionResponse
+    <a href="#ModifierValueResponse">
+     ModifierValueResponse
     </a>
    </div>
    <h3 class="field-label">
@@ -2806,58 +2957,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ {
-      "id" : 123,
-      "label" : "aeiou",
-      "value_data" : "{}",
-      "is_default" : true,
-      "sort_order" : 123
-    } ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    }
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -2885,7 +2986,134 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   An option object.
+   A `ModifierValue` object.
+   <a href="#ModifierValueResponse">
+    ModifierValueResponse
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `ModifierValue` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
+   <a name="createOption">
+   </a>
+   <div class="method-path">
+    <h2 class="post">
+     <span class="http-method">
+      POST
+     </span>
+     /catalog/products/{product_id}/options
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     createOption
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Creates an `Option`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     Option
+     <a href="#OptionPost">
+      OptionPost
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — An `Option` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#OptionResponse">
+     OptionResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   An `Option` object.
    <a href="#OptionResponse">
     OptionResponse
    </a>
@@ -2900,6 +3128,143 @@ Please view the documentation generated from the Swagger file [here](http://edit
     422
    </h4>
    Option was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
+   <a name="createOptionValue">
+   </a>
+   <div class="method-path">
+    <h2 class="post">
+     <span class="http-method">
+      POST
+     </span>
+     /catalog/products/{product_id}/options/{option_id}/values
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     createOptionValue
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Creates a `OptionValue`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     option_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Option`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     OptionValue
+     <a href="#OptionValuePost">
+      OptionValuePost
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — A `OptionValue` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#OptionValueResponse">
+     OptionValueResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `OptionValue` object.
+   <a href="#OptionValueResponse">
+    OptionValueResponse
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `OptionValue` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -2944,8 +3309,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product
      <a href="#ProductPost">
       ProductPost
@@ -2974,106 +3340,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "calculated_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "gift_wrapping_options_list" : [ 123 ],
-    "page_title" : "aeiou",
-    "videos" : [ {
-      "product_id" : 123,
-      "length" : "aeiou",
-      "description" : "aeiou",
-      "id" : 123,
-      "title" : "aeiou",
-      "sort_order" : 123
-    } ],
-    "is_condition_shown" : true,
-    "variants" : [ {
-      "image_url" : "aeiou",
-      "option_values" : [ {
-        "option_display_name" : "aeiou",
-        "option_id" : 123,
-        "id" : 123,
-        "label" : "aeiou"
-      } ],
-      "weight" : 1.3579000000000001069366817318950779736042022705078125,
-      "upc" : "aeiou",
-      "bin_picking_number" : "aeiou",
-      "sku_id" : 123,
-      "purchasing_disabled_message" : "aeiou",
-      "inventory_level" : 123,
-      "price" : 1.3579000000000001069366817318950779736042022705078125,
-      "inventory_warning_level" : 123,
-      "product_id" : 123,
-      "id" : 123,
-      "purchasing_disabled" : true,
-      "sku" : "aeiou",
-      "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-    } ],
-    "type" : "aeiou",
-    "retail_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "layout_file" : "aeiou",
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "warranty" : "aeiou",
-    "is_free_shipping" : true,
-    "id" : 123,
-    "sku" : "aeiou",
-    "height" : 1.3579000000000001069366817318950779736042022705078125,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    },
-    "images" : [ "" ],
-    "custom_fields" : [ {
-      "product_id" : 123,
-      "name" : "aeiou",
-      "id" : 123,
-      "value" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "brand_id" : 123,
-    "meta_description" : "aeiou",
-    "condition" : "aeiou",
-    "inventory_level" : 123,
-    "name" : "aeiou",
-    "inventory_tracking" : "aeiou",
-    "preorder_release_date" : "aeiou",
-    "description" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "availability" : "aeiou",
-    "search_keywords" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "is_price_hidden" : true,
-    "order_quantity_minimum" : 123,
-    "availability_description" : "aeiou",
-    "fixed_cost_shipping_price" : 123,
-    "categories" : [ 123 ],
-    "sort_order" : 123,
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "order_quantity_maximum" : 123,
-    "is_visible" : true,
-    "is_preorder_only" : true,
-    "date_created" : "aeiou",
-    "preorder_message" : "aeiou",
-    "tax_class_id" : 123,
-    "bulk_pricing_rules" : [ {
-      "amount" : 1.3579000000000001069366817318950779736042022705078125,
-      "quantity_min" : 123,
-      "quantity_max" : 123,
-      "id" : 123,
-      "type" : "aeiou"
-    } ],
-    "sale_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "product_tax_code" : "aeiou",
-    "depth" : 1.3579000000000001069366817318950779736042022705078125,
-    "date_modified" : "aeiou",
-    "gift_wrapping_options_type" : "aeiou",
-    "width" : 1.3579000000000001069366817318950779736042022705078125,
-    "price_hidden_label" : "aeiou",
-    "is_featured" : true,
-    "view_count" : 123
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -3102,7 +3369,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A product
+   A product.
    <a href="#ProductResponse">
     ProductResponse
    </a>
@@ -3146,15 +3413,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the image is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -3175,8 +3443,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productImage
      <a href="#ProductImagePost">
       ProductImagePost
@@ -3271,16 +3540,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -3301,11 +3570,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPost">
+      MetafieldPost
      </a>
      (required)
     </div>
@@ -3313,7 +3583,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
      <span class="param-type">
       Body Parameter
      </span>
-     — `Metafield` object
+     — A `Metafield` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -3331,18 +3601,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -3371,7 +3630,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A `Metafield` object
+   A `Metafield` object.
    <a href="#MetafieldResponse">
     MetafieldResponse
    </a>
@@ -3415,15 +3674,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the video is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -3444,11 +3704,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productVideo
-     <a href="#ProductVideo">
-      ProductVideo
+     <a href="#ProductVideoPost">
+      ProductVideoPost
      </a>
      (required)
     </div>
@@ -3474,26 +3735,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "length" : "aeiou",
-    "description" : "aeiou",
-    "id" : 123,
-    "title" : "aeiou",
-    "sort_order" : 123
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -3521,7 +3764,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A product video
+   A product video.
    <a href="#ProductVideoResponse">
     ProductVideoResponse
    </a>
@@ -3558,16 +3801,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -3588,11 +3831,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Variant
-     <a href="#Variant">
-      Variant
+     <a href="#VariantPost">
+      VariantPost
      </a>
      (required)
     </div>
@@ -3600,7 +3844,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
      <span class="param-type">
       Body Parameter
      </span>
-     — A `Variant` object.
+     — `Variant` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -3618,28 +3862,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "image_url" : "aeiou",
-    "option_values" : [ {
-      "option_display_name" : "aeiou",
-      "option_id" : 123,
-      "id" : 123,
-      "label" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "sku_id" : 123,
-    "purchasing_disabled_message" : "aeiou",
-    "inventory_level" : 123,
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "product_id" : 123,
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "sku" : "aeiou",
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -3704,25 +3927,26 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Variant`.
+     — The ID of the `Variant` to which the resource belongs.
  format: int
     </div>
    </div>
@@ -3744,8 +3968,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Form parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_file (required)
     </div>
     <div class="param-desc">
@@ -3845,18 +4070,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -3885,11 +4111,12 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPost">
+      MetafieldPost
      </a>
      (required)
     </div>
@@ -3915,18 +4142,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -3999,15 +4215,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Brand` requested.
+     — The ID of the `Brand` to which the resource belongs.
  format: int
     </div>
    </div>
@@ -4081,15 +4298,17 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Brand` to which the image is being attached.
+     — The ID of the `Brand` to which the resource belongs.
+ format: int
     </div>
    </div>
    <h3 class="field-label">
@@ -4157,13 +4376,14 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Delete a `Metafield`
+    Deletes a `Metafield`.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -4173,7 +4393,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -4269,8 +4490,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -4279,7 +4501,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -4359,8 +4582,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -4369,7 +4593,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -4378,7 +4603,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by parent_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -4387,7 +4613,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -4396,7 +4623,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by keywords.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -4461,8 +4689,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4543,8 +4772,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4620,13 +4850,14 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Delete a `Metafield`
+    Deletes a `Metafield`.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -4636,7 +4867,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -4717,18 +4949,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `ComplexRule` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -4784,6 +5017,105 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </a>
   </div>
   <div class="method">
+   <a name="deleteCustomFieldById">
+   </a>
+   <div class="method-path">
+    <h2 class="delete">
+     <span class="http-method">
+      DELETE
+     </span>
+     /catalog/products/{product_id}/custom-fields/{custom_field_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     deleteCustomFieldById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Deletes a Product's `CustomField`, based on the `product_id` and `custom_field_id`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     custom_field_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `CustomField`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    204
+   </h4>
+   An empty response.
+   <a href="#">
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+  </div>
+  <div class="method">
    <a name="deleteModifierById">
    </a>
    <div class="method-path">
@@ -4803,23 +5135,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Delete a Product's `Modifier` based on the product_id and modifier_id.
+    Deletes a Product's `Modifier` based on the product_id and modifier_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -4894,23 +5227,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Deletes the image assigned to show when the modifier value is selected.
+    Deletes the image applied to show when the modifier value is selected
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -4919,7 +5253,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — The ID of the `Modifier`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      value_id (required)
     </div>
     <div class="param-desc">
@@ -4970,7 +5305,109 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     204
    </h4>
-   Image cleared for this modifier value.
+   Image cleared for the modifier value.
+   <a href="#">
+   </a>
+  </div>
+  <div class="method">
+   <a name="deleteModifierValueById">
+   </a>
+   <div class="method-path">
+    <h2 class="delete">
+     <span class="http-method">
+      DELETE
+     </span>
+     /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     deleteModifierValueById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Deletes a Product's `ModifierValue` based on the product_id, modifier_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    204
+   </h4>
+   An empty response.
    <a href="#">
    </a>
   </div>
@@ -4994,23 +5431,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Delete a Product's `Option`, based on the product_id and option_id.
+    Deletes a Product's `Option`, based on the product_id and option_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Option` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -5018,6 +5456,108 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Path Parameter
      </span>
      — The ID of the `Option`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    204
+   </h4>
+   An empty response.
+   <a href="#">
+   </a>
+  </div>
+  <div class="method">
+   <a name="deleteOptionValueById">
+   </a>
+   <div class="method-path">
+    <h2 class="delete">
+     <span class="http-method">
+      DELETE
+     </span>
+     /catalog/products/{product_id}/options/{option_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     deleteOptionValueById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Deletes a Product's `OptionValue` based on the product_id, option_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     option_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Option`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
     </div>
    </div>
    <h3 class="field-label">
@@ -5085,21 +5625,21 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Deletes a `Product` object from the BigCommerce Catalog
+    Deletes a `Product` object from the BigCommerce Catalog.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -5172,17 +5712,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the image is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -5262,8 +5804,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -5273,15 +5816,15 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -5354,17 +5897,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the video is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -5415,7 +5960,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     204
    </h4>
-   An empty response
+   An empty response.
    <a href="#">
    </a>
   </div>
@@ -5439,7 +5984,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Deletes one or more `Product` objects from the BigCommerce Catalog
+    Deletes one or more `Product` objects from the BigCommerce Catalog.
    </div>
    <h3 class="field-label">
     Consumes
@@ -5459,8 +6004,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -5469,7 +6015,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -5478,7 +6025,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -5487,7 +6035,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by price.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -5496,7 +6045,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by weight.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -5505,7 +6055,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by condition.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -5514,7 +6065,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by brand_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -5522,9 +6074,10 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Query Parameter
      </span>
      — Filter items by date_modified.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_last_imported (optional)
     </div>
     <div class="param-desc">
@@ -5532,9 +6085,10 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Query Parameter
      </span>
      — Filter items by date_last_imported.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -5543,7 +6097,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -5552,7 +6107,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_featured.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -5561,7 +6117,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by inventory_level.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      total_sold (optional)
     </div>
     <div class="param-desc">
@@ -5570,7 +6127,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by total_sold.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -5579,7 +6137,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by type: `physical` or `digital`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -5588,7 +6147,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by categories.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -5653,18 +6213,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -5740,13 +6301,14 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Delete a `Metafield`
+    Deletes a `Metafield`.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -5756,17 +6318,18 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -5847,15 +6410,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Brand` requested.
+     — The ID of the `Brand` to which the resource belongs.
  format: int
     </div>
    </div>
@@ -5889,15 +6453,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "meta_description" : "aeiou",
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "name" : "aeiou",
-    "id" : 123,
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -5963,8 +6519,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -5974,7 +6531,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -6004,8 +6562,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Return type
    </h3>
    <div class="return-type">
-    <a href="#Metafield">
-     Metafield
+    <a href="#MetafieldResponse">
+     MetafieldResponse
     </a>
    </div>
    <h3 class="field-label">
@@ -6015,16 +6573,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "updated_at" : "2000-01-23T04:56:07.000+00:00",
-  "namespace" : "aeiou",
-  "resource_type" : "aeiou",
-  "description" : "aeiou",
-  "resource_id" : 123,
-  "created_at" : "2000-01-23T04:56:07.000+00:00",
-  "id" : 123,
-  "value" : "aeiou",
-  "key" : "aeiou",
-  "permission_set" : "aeiou"
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -6053,8 +6603,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     200
    </h4>
    A `Metafield` object.
-   <a href="#Metafield">
-    Metafield
+   <a href="#MetafieldResponse">
+    MetafieldResponse
    </a>
    <h4 class="field-label">
     404
@@ -6089,8 +6639,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -6119,26 +6670,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
-     key (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      Query Parameter
-     </span>
-     — Filter based on a metafield's key.
-    </div>
-    <div class="param">
-     namespace (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      Query Parameter
-     </span>
-     — Filter based on a metafield's key.
-    </div>
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6147,7 +6681,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6156,7 +6691,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -6165,7 +6701,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -6190,29 +6727,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -6293,8 +6821,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -6303,7 +6832,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -6312,7 +6842,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6321,7 +6852,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6346,26 +6878,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "meta_description" : "aeiou",
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "name" : "aeiou",
-    "id" : 123,
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -6439,8 +6965,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -6449,7 +6976,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -6458,7 +6986,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by parent_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -6467,7 +6996,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by page_title.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -6476,7 +7006,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by keywords.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -6485,7 +7016,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6494,7 +7026,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6519,37 +7052,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "is_visible" : true,
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "description" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou",
-    "default_product_sort" : "aeiou",
-    "meta_description" : "aeiou",
-    "layout_file" : "aeiou",
-    "parent_id" : 123,
-    "name" : "aeiou",
-    "id" : 123,
-    "sort_order" : 123,
-    "views" : 123,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    }
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -6608,8 +7124,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -6650,26 +7167,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "is_visible" : true,
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "description" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou",
-    "default_product_sort" : "aeiou",
-    "meta_description" : "aeiou",
-    "layout_file" : "aeiou",
-    "parent_id" : 123,
-    "name" : "aeiou",
-    "id" : 123,
-    "sort_order" : 123,
-    "views" : 123,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    }
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -6735,8 +7233,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -6746,7 +7245,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -6776,8 +7276,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Return type
    </h3>
    <div class="return-type">
-    <a href="#Metafield">
-     Metafield
+    <a href="#MetafieldResponse">
+     MetafieldResponse
     </a>
    </div>
    <h3 class="field-label">
@@ -6787,16 +7287,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "updated_at" : "2000-01-23T04:56:07.000+00:00",
-  "namespace" : "aeiou",
-  "resource_type" : "aeiou",
-  "description" : "aeiou",
-  "resource_id" : 123,
-  "created_at" : "2000-01-23T04:56:07.000+00:00",
-  "id" : 123,
-  "value" : "aeiou",
-  "key" : "aeiou",
-  "permission_set" : "aeiou"
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -6824,9 +7316,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A metafield object,
-   <a href="#Metafield">
-    Metafield
+   A `Metafield` object.
+   <a href="#MetafieldResponse">
+    MetafieldResponse
    </a>
    <h4 class="field-label">
     404
@@ -6861,8 +7353,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -6891,8 +7384,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -6901,7 +7395,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -6910,7 +7405,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -6919,7 +7415,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -6944,29 +7441,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -7068,16 +7556,18 @@ Please view the documentation generated from the Swagger file [here](http://edit
     "url" : "aeiou"
   } ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -7131,23 +7621,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Get a `ComplexRule` by product_id
+    Gets a `ComplexRule` by product_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `ComplexRule` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -7187,42 +7678,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "purchasing_hidden" : true,
-    "stop" : true,
-    "price_adjuster" : {
-      "adjuster" : "aeiou",
-      "adjuster_value" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "image_url" : "aeiou",
-    "product_id" : 123,
-    "weight_adjuster" : "",
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "purchasing_disabled_message" : "aeiou",
-    "conditions" : [ {
-      "rule_id" : 123,
-      "variant_id" : 123,
-      "combination_id" : 123,
-      "modifier_id" : 123,
-      "modifier_value_id" : 123,
-      "id" : 123
-    } ],
-    "sort_order" : 123,
-    "enabled" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -7250,7 +7707,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A modifier object
+   A `Modifier` object.
    <a href="#ComplexRuleResponse">
     ComplexRuleResponse
    </a>
@@ -7282,21 +7739,21 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Get an array of `ComplexRule` objects.
+    Gets an array of `ComplexRule` objects.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `ComplexRule` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -7329,41 +7786,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "purchasing_hidden" : true,
-    "stop" : true,
-    "price_adjuster" : {
-      "adjuster" : "aeiou",
-      "adjuster_value" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "image_url" : "aeiou",
-    "product_id" : 123,
-    "weight_adjuster" : "",
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "purchasing_disabled_message" : "aeiou",
-    "conditions" : [ {
-      "rule_id" : 123,
-      "variant_id" : 123,
-      "combination_id" : 123,
-      "modifier_id" : 123,
-      "modifier_value_id" : 123,
-      "id" : 123
-    } ],
-    "sort_order" : 123,
-    "enabled" : true
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -7398,6 +7834,238 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </a>
   </div>
   <div class="method">
+   <a name="getCustomFieldById">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/custom-fields/{custom_field_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getCustomFieldById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets a `CustomField` by `product_id` and `custom_field_id`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     custom_field_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `CustomField`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#CustomFieldResponse">
+     CustomFieldResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `CustomField` object.
+   <a href="#CustomFieldResponse">
+    CustomFieldResponse
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+  </div>
+  <div class="method">
+   <a name="getCustomFields">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/custom-fields
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getCustomFields
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets an array of `CustomField` objects.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#CustomFieldCollectionResponse">
+     CustomFieldCollectionResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : [ "" ],
+  "meta" : {
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
+  }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   An array of `CustomField` objects and metadata.
+   <a href="#CustomFieldCollectionResponse">
+    CustomFieldCollectionResponse
+   </a>
+  </div>
+  <div class="method">
    <a name="getModifierById">
    </a>
    <div class="method-path">
@@ -7417,23 +8085,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Get a `Modifier` by product_id and modifier_id
+    Gets a `Modifier` by product_id and modifier_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -7473,53 +8142,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ "" ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    },
-    "required" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -7560,6 +8184,258 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </a>
   </div>
   <div class="method">
+   <a name="getModifierValueById">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getModifierValueById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets a `ModifierValue` by product_id, modifier_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#ModifierValueResponse">
+     ModifierValueResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `ModifierValue` object.
+   <a href="#ModifierValueResponse">
+    ModifierValueResponse
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+  </div>
+  <div class="method">
+   <a name="getModifierValues">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/modifiers/{modifier_id}/values
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getModifierValues
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets an array of `ModifierValue` objects.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#ModifierValueCollectionResponse">
+     ModifierValueCollectionResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : [ "" ],
+  "meta" : {
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
+  }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   An array of modifier values and metadata.
+   <a href="#ModifierValueCollectionResponse">
+    ModifierValueCollectionResponse
+   </a>
+  </div>
+  <div class="method">
    <a name="getModifiers">
    </a>
    <div class="method-path">
@@ -7584,16 +8460,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -7626,52 +8502,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "product_id" : 123,
-    "option_values" : [ "" ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    },
-    "required" : true
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -7725,23 +8569,24 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </div>
    <br/>
    <div class="method-notes">
-    Gets `Option` object, by product id and option id.
+    Gets `Option` object by product ID and option id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Option` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -7781,58 +8626,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ {
-      "id" : 123,
-      "label" : "aeiou",
-      "value_data" : "{}",
-      "is_default" : true,
-      "sort_order" : 123
-    } ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    }
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -7873,6 +8668,258 @@ Please view the documentation generated from the Swagger file [here](http://edit
    </a>
   </div>
   <div class="method">
+   <a name="getOptionValueById">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/options/{option_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getOptionValueById
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets a `OptionValue` by product_id, option_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     option_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Option`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#OptionValueResponse">
+     OptionValueResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `OptionValue` object.
+   <a href="#OptionValueResponse">
+    OptionValueResponse
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+  </div>
+  <div class="method">
+   <a name="getOptionValues">
+   </a>
+   <div class="method-path">
+    <h2 class="get">
+     <span class="http-method">
+      GET
+     </span>
+     /catalog/products/{product_id}/options/{option_id}/values
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     getOptionValues
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Gets an array of `OptionValue` objects.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     option_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Option`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#OptionValueCollectionResponse">
+     OptionValueCollectionResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : [ "" ],
+  "meta" : {
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
+  }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   An array of option values and metadata.
+   <a href="#OptionValueCollectionResponse">
+    OptionValueCollectionResponse
+   </a>
+  </div>
+  <div class="method">
    <a name="getOptions">
    </a>
    <div class="method-path">
@@ -7897,16 +8944,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -7939,57 +8986,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "product_id" : 123,
-    "option_values" : [ {
-      "id" : 123,
-      "label" : "aeiou",
-      "value_data" : "{}",
-      "is_default" : true,
-      "sort_order" : 123
-    } ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    }
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -8055,16 +9065,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -8085,8 +9095,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      include (optional)
     </div>
     <div class="param-desc">
@@ -8111,106 +9122,7 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "calculated_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "gift_wrapping_options_list" : [ 123 ],
-    "page_title" : "aeiou",
-    "videos" : [ {
-      "product_id" : 123,
-      "length" : "aeiou",
-      "description" : "aeiou",
-      "id" : 123,
-      "title" : "aeiou",
-      "sort_order" : 123
-    } ],
-    "is_condition_shown" : true,
-    "variants" : [ {
-      "image_url" : "aeiou",
-      "option_values" : [ {
-        "option_display_name" : "aeiou",
-        "option_id" : 123,
-        "id" : 123,
-        "label" : "aeiou"
-      } ],
-      "weight" : 1.3579000000000001069366817318950779736042022705078125,
-      "upc" : "aeiou",
-      "bin_picking_number" : "aeiou",
-      "sku_id" : 123,
-      "purchasing_disabled_message" : "aeiou",
-      "inventory_level" : 123,
-      "price" : 1.3579000000000001069366817318950779736042022705078125,
-      "inventory_warning_level" : 123,
-      "product_id" : 123,
-      "id" : 123,
-      "purchasing_disabled" : true,
-      "sku" : "aeiou",
-      "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-    } ],
-    "type" : "aeiou",
-    "retail_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "layout_file" : "aeiou",
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "warranty" : "aeiou",
-    "is_free_shipping" : true,
-    "id" : 123,
-    "sku" : "aeiou",
-    "height" : 1.3579000000000001069366817318950779736042022705078125,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    },
-    "images" : [ "" ],
-    "custom_fields" : [ {
-      "product_id" : 123,
-      "name" : "aeiou",
-      "id" : 123,
-      "value" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "brand_id" : 123,
-    "meta_description" : "aeiou",
-    "condition" : "aeiou",
-    "inventory_level" : 123,
-    "name" : "aeiou",
-    "inventory_tracking" : "aeiou",
-    "preorder_release_date" : "aeiou",
-    "description" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "availability" : "aeiou",
-    "search_keywords" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "is_price_hidden" : true,
-    "order_quantity_minimum" : 123,
-    "availability_description" : "aeiou",
-    "fixed_cost_shipping_price" : 123,
-    "categories" : [ 123 ],
-    "sort_order" : 123,
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "order_quantity_maximum" : 123,
-    "is_visible" : true,
-    "is_preorder_only" : true,
-    "date_created" : "aeiou",
-    "preorder_message" : "aeiou",
-    "tax_class_id" : 123,
-    "bulk_pricing_rules" : [ {
-      "amount" : 1.3579000000000001069366817318950779736042022705078125,
-      "quantity_min" : 123,
-      "quantity_max" : 123,
-      "id" : 123,
-      "type" : "aeiou"
-    } ],
-    "sale_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "product_tax_code" : "aeiou",
-    "depth" : 1.3579000000000001069366817318950779736042022705078125,
-    "date_modified" : "aeiou",
-    "gift_wrapping_options_type" : "aeiou",
-    "width" : 1.3579000000000001069366817318950779736042022705078125,
-    "price_hidden_label" : "aeiou",
-    "is_featured" : true,
-    "view_count" : 123
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -8276,17 +9188,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the image is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -8392,15 +9306,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the image is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -8435,16 +9350,18 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <pre class="example"><code>{
   "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -8516,8 +9433,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -8527,15 +9445,15 @@ Please view the documentation generated from the Swagger file [here](http://edit
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -8557,8 +9475,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Return type
    </h3>
    <div class="return-type">
-    <a href="#Metafield">
-     Metafield
+    <a href="#MetafieldResponse">
+     MetafieldResponse
     </a>
    </div>
    <h3 class="field-label">
@@ -8568,16 +9486,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "updated_at" : "2000-01-23T04:56:07.000+00:00",
-  "namespace" : "aeiou",
-  "resource_type" : "aeiou",
-  "description" : "aeiou",
-  "resource_id" : 123,
-  "created_at" : "2000-01-23T04:56:07.000+00:00",
-  "id" : 123,
-  "value" : "aeiou",
-  "key" : "aeiou",
-  "permission_set" : "aeiou"
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -8605,9 +9515,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h4 class="field-label">
     200
    </h4>
-   A metafield object.
-   <a href="#Metafield">
-    Metafield
+   A `Metafield` object.
+   <a href="#MetafieldResponse">
+    MetafieldResponse
    </a>
    <h4 class="field-label">
     404
@@ -8642,16 +9552,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -8672,8 +9582,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -8682,7 +9593,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -8691,7 +9603,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -8700,7 +9613,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -8725,29 +9639,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -8813,17 +9718,19 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the video is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -8863,26 +9770,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "length" : "aeiou",
-    "description" : "aeiou",
-    "id" : 123,
-    "title" : "aeiou",
-    "sort_order" : 123
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -8947,15 +9836,16 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the video is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -8988,25 +9878,20 @@ Please view the documentation generated from the Swagger file [here](http://edit
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "product_id" : 123,
-    "length" : "aeiou",
-    "description" : "aeiou",
-    "id" : 123,
-    "title" : "aeiou",
-    "sort_order" : 123
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -9080,8 +9965,9 @@ Please view the documentation generated from the Swagger file [here](http://edit
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -9090,7 +9976,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -9099,7 +9986,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -9108,7 +9996,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -9117,7 +10006,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by upc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -9126,7 +10016,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by price.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -9135,7 +10026,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by weight.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -9144,7 +10036,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by condition.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -9153,7 +10046,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by brand_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -9161,9 +10055,10 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Query Parameter
      </span>
      — Filter items by date_modified.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_last_imported (optional)
     </div>
     <div class="param-desc">
@@ -9171,9 +10066,10 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Query Parameter
      </span>
      — Filter items by date_last_imported.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -9182,7 +10078,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_visible.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -9191,7 +10088,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_featured.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -9200,7 +10098,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by is_free_shipping.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -9209,7 +10108,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by inventory_level.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      inventory_low (optional)
     </div>
     <div class="param-desc">
@@ -9218,7 +10118,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by inventory_low; values: 1, 0.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      out_of_stock (optional)
     </div>
     <div class="param-desc">
@@ -9227,7 +10128,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by out_of_stock. To enable the filter, pass `out_of_stock`=`1`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      total_sold (optional)
     </div>
     <div class="param-desc">
@@ -9236,7 +10138,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by total_sold.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -9245,7 +10148,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by type: `physical` or `digital`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -9254,7 +10158,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by categories.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword (optional)
     </div>
     <div class="param-desc">
@@ -9263,7 +10168,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by keywords found in the name, description, sku, keywords, or brand name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      keyword_context (optional)
     </div>
     <div class="param-desc">
@@ -9272,7 +10178,28 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Set context for a product search.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
+     channel_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Query Parameter
+     </span>
+     — Filter items by channel.
+    </div>
+    </p>
+<div class="param">
+     status (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Query Parameter
+     </span>
+     — Filter items by status.
+    </div>
+    </p>
+<div class="param">
      include (optional)
     </div>
     <div class="param-desc">
@@ -9281,7 +10208,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Include sub-resources on a product, with a comma-separated list. Valid expansions currently include `variants`, `images`, `custom_fields`, and `bulk_pricing_rules`.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -9290,7 +10218,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Filter items by availability. Values are: available, disabled, preorder.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -9299,7 +10228,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -9308,7 +10238,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      direction (optional)
     </div>
     <div class="param-desc">
@@ -9317,7 +10248,8 @@ Please view the documentation generated from the Swagger file [here](http://edit
      </span>
      — Sort direction. Values are: asc, desc.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sort (optional)
     </div>
     <div class="param-desc">
@@ -9325,7 +10257,6 @@ Please view the documentation generated from the Swagger file [here](http://edit
       Query Parameter
      </span>
      — Field name to sort by.
-Values: id, name, sku, price, date_modified, date_last_imported, inventory_level, is_visible.
     </div>
    </div>
    <h3 class="field-label">
@@ -9343,117 +10274,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "calculated_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "gift_wrapping_options_list" : [ 123 ],
-    "page_title" : "aeiou",
-    "videos" : [ {
-      "product_id" : 123,
-      "length" : "aeiou",
-      "description" : "aeiou",
-      "id" : 123,
-      "title" : "aeiou",
-      "sort_order" : 123
-    } ],
-    "is_condition_shown" : true,
-    "variants" : [ {
-      "image_url" : "aeiou",
-      "option_values" : [ {
-        "option_display_name" : "aeiou",
-        "option_id" : 123,
-        "id" : 123,
-        "label" : "aeiou"
-      } ],
-      "weight" : 1.3579000000000001069366817318950779736042022705078125,
-      "upc" : "aeiou",
-      "bin_picking_number" : "aeiou",
-      "sku_id" : 123,
-      "purchasing_disabled_message" : "aeiou",
-      "inventory_level" : 123,
-      "price" : 1.3579000000000001069366817318950779736042022705078125,
-      "inventory_warning_level" : 123,
-      "product_id" : 123,
-      "id" : 123,
-      "purchasing_disabled" : true,
-      "sku" : "aeiou",
-      "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-    } ],
-    "type" : "aeiou",
-    "retail_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "layout_file" : "aeiou",
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "warranty" : "aeiou",
-    "is_free_shipping" : true,
-    "id" : 123,
-    "sku" : "aeiou",
-    "height" : 1.3579000000000001069366817318950779736042022705078125,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    },
-    "images" : [ "" ],
-    "custom_fields" : [ {
-      "product_id" : 123,
-      "name" : "aeiou",
-      "id" : 123,
-      "value" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "brand_id" : 123,
-    "meta_description" : "aeiou",
-    "condition" : "aeiou",
-    "inventory_level" : 123,
-    "name" : "aeiou",
-    "inventory_tracking" : "aeiou",
-    "preorder_release_date" : "aeiou",
-    "description" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "availability" : "aeiou",
-    "search_keywords" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "is_price_hidden" : true,
-    "order_quantity_minimum" : 123,
-    "availability_description" : "aeiou",
-    "fixed_cost_shipping_price" : 123,
-    "categories" : [ 123 ],
-    "sort_order" : 123,
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "order_quantity_maximum" : 123,
-    "is_visible" : true,
-    "is_preorder_only" : true,
-    "date_created" : "aeiou",
-    "preorder_message" : "aeiou",
-    "tax_class_id" : 123,
-    "bulk_pricing_rules" : [ {
-      "amount" : 1.3579000000000001069366817318950779736042022705078125,
-      "quantity_min" : 123,
-      "quantity_max" : 123,
-      "id" : 123,
-      "type" : "aeiou"
-    } ],
-    "sale_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "product_tax_code" : "aeiou",
-    "depth" : 1.3579000000000001069366817318950779736042022705078125,
-    "date_modified" : "aeiou",
-    "gift_wrapping_options_type" : "aeiou",
-    "width" : 1.3579000000000001069366817318950779736042022705078125,
-    "price_hidden_label" : "aeiou",
-    "is_featured" : true,
-    "view_count" : 123
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -9512,18 +10346,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -9564,28 +10399,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "image_url" : "aeiou",
-    "option_values" : [ {
-      "option_display_name" : "aeiou",
-      "option_id" : 123,
-      "id" : 123,
-      "label" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "sku_id" : 123,
-    "purchasing_disabled_message" : "aeiou",
-    "inventory_level" : 123,
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "product_id" : 123,
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "sku" : "aeiou",
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -9651,8 +10465,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -9662,17 +10477,18 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -9702,8 +10518,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Return type
    </h3>
    <div class="return-type">
-    <a href="#Metafield">
-     Metafield
+    <a href="#MetafieldResponse">
+     MetafieldResponse
     </a>
    </div>
    <h3 class="field-label">
@@ -9713,16 +10529,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "updated_at" : "2000-01-23T04:56:07.000+00:00",
-  "namespace" : "aeiou",
-  "resource_type" : "aeiou",
-  "description" : "aeiou",
-  "resource_id" : 123,
-  "created_at" : "2000-01-23T04:56:07.000+00:00",
-  "id" : 123,
-  "value" : "aeiou",
-  "key" : "aeiou",
-  "permission_set" : "aeiou"
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -9750,9 +10558,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     200
    </h4>
-   A metafield object.
-   <a href="#Metafield">
-    Metafield
+   A `Metafield` object.
+   <a href="#MetafieldResponse">
+    MetafieldResponse
    </a>
    <h4 class="field-label">
     404
@@ -9787,18 +10595,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -9827,8 +10636,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -9837,7 +10647,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -9846,7 +10657,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Control the items per page.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      key (optional)
     </div>
     <div class="param-desc">
@@ -9855,7 +10667,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter based on a metafield's key.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -9880,29 +10693,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -9983,8 +10787,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -9993,7 +10798,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -10002,7 +10808,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by sku.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10011,7 +10818,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10036,39 +10844,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "image_url" : "aeiou",
-    "option_values" : [ {
-      "option_display_name" : "aeiou",
-      "option_id" : 123,
-      "id" : 123,
-      "label" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "sku_id" : 123,
-    "purchasing_disabled_message" : "aeiou",
-    "inventory_level" : 123,
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "product_id" : 123,
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "sku" : "aeiou",
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -10134,16 +10923,16 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -10164,8 +10953,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -10174,7 +10964,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -10199,39 +10990,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "image_url" : "aeiou",
-    "option_values" : [ {
-      "option_display_name" : "aeiou",
-      "option_id" : 123,
-      "id" : 123,
-      "label" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "sku_id" : 123,
-    "purchasing_disabled_message" : "aeiou",
-    "inventory_level" : 123,
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "product_id" : 123,
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "sku" : "aeiou",
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -10297,15 +11069,16 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Brand` requested.
+     — The ID of the `Brand` to which the resource belongs.
  format: int
     </div>
    </div>
@@ -10327,11 +11100,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      brand
-     <a href="#Brand">
-      Brand
+     <a href="#BrandPut">
+      BrandPut
      </a>
      (required)
     </div>
@@ -10357,15 +11131,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "meta_description" : "aeiou",
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "name" : "aeiou",
-    "id" : 123,
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -10445,8 +11211,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -10456,7 +11223,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      brand_id (required)
     </div>
     <div class="param-desc">
@@ -10485,11 +11253,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPut">
+      MetafieldPut
      </a>
      (required)
     </div>
@@ -10515,18 +11284,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -10538,7 +11296,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </span>
    request header;
     the media type will be conveyed by the
-   <span class="header">
+   <span class="heaader">
     Content-Type
    </span>
    response header.
@@ -10592,8 +11350,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -10622,11 +11381,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      category
-     <a href="#Category">
-      Category
+     <a href="#CategoryPut">
+      CategoryPut
      </a>
      (required)
     </div>
@@ -10652,26 +11412,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "is_visible" : true,
-    "page_title" : "aeiou",
-    "image_url" : "aeiou",
-    "description" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "search_keywords" : "aeiou",
-    "default_product_sort" : "aeiou",
-    "meta_description" : "aeiou",
-    "layout_file" : "aeiou",
-    "parent_id" : 123,
-    "name" : "aeiou",
-    "id" : 123,
-    "sort_order" : 123,
-    "views" : 123,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    }
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -10751,8 +11492,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -10762,7 +11504,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      category_id (required)
     </div>
     <div class="param-desc">
@@ -10791,11 +11534,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPut">
+      MetafieldPut
      </a>
      (required)
     </div>
@@ -10821,18 +11565,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -10893,23 +11626,24 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="method-notes">
-    Update an Product's `ComplexRule`, based on the `product_id` and `complex_rule_id`.
+    Updates an Product's `ComplexRule`, based on the `product_id` and `complex_rule_id`.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `ComplexRule` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      complex_rule_id (required)
     </div>
     <div class="param-desc">
@@ -10935,6 +11669,25 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </li>
    </ul>
    <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     ComplexRule
+     <a href="#ComplexRulePut">
+      ComplexRulePut
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — `ComplexRule` object.
+    </div>
+   </div>
+   <h3 class="field-label">
     Return type
    </h3>
    <div class="return-type">
@@ -10949,42 +11702,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "purchasing_hidden" : true,
-    "stop" : true,
-    "price_adjuster" : {
-      "adjuster" : "aeiou",
-      "adjuster_value" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "image_url" : "aeiou",
-    "product_id" : 123,
-    "weight_adjuster" : "",
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "purchasing_disabled_message" : "aeiou",
-    "conditions" : [ {
-      "rule_id" : 123,
-      "variant_id" : 123,
-      "combination_id" : 123,
-      "modifier_id" : 123,
-      "modifier_value_id" : 123,
-      "id" : 123
-    } ],
-    "sort_order" : 123,
-    "enabled" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -11012,7 +11731,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     200
    </h4>
-   A `ComplexRule` object
+   A `ComplexRule` object.
    <a href="#ComplexRuleResponse">
     ComplexRuleResponse
    </a>
@@ -11027,6 +11746,150 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     422
    </h4>
    The `ComplexRule` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
+   <a name="updateCustomField">
+   </a>
+   <div class="method-path">
+    <h2 class="put">
+     <span class="http-method">
+      PUT
+     </span>
+     /catalog/products/{product_id}/custom-fields/{custom_field_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     updateCustomField
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Updates an Product's `CustomField`, based on the `product_id` and `custom_field_id`.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     custom_field_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `CustomField`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     CustomField
+     <a href="#CustomFieldPut">
+      CustomFieldPut
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — `CustomField` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#CustomFieldResponse">
+     CustomFieldResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `CustomField` object.
+   <a href="#CustomFieldResponse">
+    CustomFieldResponse
+   </a>
+   <h4 class="field-label">
+    404
+   </h4>
+   The resource was not found.
+   <a href="#NotFound">
+    NotFound
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `CustomField` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -11051,23 +11914,24 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="method-notes">
-    Update an Product's `Modifier` based on the product_id and modifier_id.
+    Updates an Product's `Modifier` based on the product_id and modifier_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Modifier` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      modifier_id (required)
     </div>
     <div class="param-desc">
@@ -11095,11 +11959,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      modifier
-     <a href="#Modifier">
-      Modifier
+     <a href="#ModifierPut">
+      ModifierPut
      </a>
      (required)
     </div>
@@ -11125,53 +11990,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ "" ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    },
-    "required" : true
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -11199,7 +12019,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     200
    </h4>
-   A modifier object.
+   A `Modifier` object.
    <a href="#ModifierResponse">
     ModifierResponse
    </a>
@@ -11214,6 +12034,153 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     422
    </h4>
    The `Modifier` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
+   <a name="updateModifierValue">
+   </a>
+   <div class="method-path">
+    <h2 class="put">
+     <span class="http-method">
+      PUT
+     </span>
+     /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     updateModifierValue
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Updates an Product's `ModifierValue` based on the product_id, modifier_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     ModifierValue
+     <a href="#ModifierValuePut">
+      ModifierValuePut
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — A BigCommerce `ModifierValue` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#ModifierValueResponse">
+     ModifierValueResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `ModifierValue` object.
+   <a href="#ModifierValueResponse">
+    ModifierValueResponse
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `ModifierValue` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -11238,23 +12205,24 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
    <br/>
    <div class="method-notes">
-    Update a Product's `Option`, based on the product_id and option_id.
+    Updates a Product's `Option`, based on the product_id and option_id.
    </div>
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the `Option` belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      option_id (required)
     </div>
     <div class="param-desc">
@@ -11282,11 +12250,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option
-     <a href="#Option">
-      Option
+     <a href="#OptionPut">
+      OptionPut
      </a>
      (required)
     </div>
@@ -11312,58 +12281,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "option_values" : [ {
-      "id" : 123,
-      "label" : "aeiou",
-      "value_data" : "{}",
-      "is_default" : true,
-      "sort_order" : 123
-    } ],
-    "name" : "aeiou",
-    "id" : 123,
-    "display_name" : "aeiou",
-    "type" : "aeiou",
-    "config" : {
-      "text_max_length" : 123,
-      "file_types_other" : [ "aeiou" ],
-      "file_max_size" : 123,
-      "file_types_supported" : [ "aeiou" ],
-      "text_characters_limited" : true,
-      "product_list_adjusts_inventory" : true,
-      "number_limited" : true,
-      "checked_by_default" : true,
-      "date_latest_value" : "2000-01-23",
-      "product_list_adjusts_pricing" : true,
-      "default_value" : "aeiou",
-      "date_limited" : true,
-      "text_max_lines" : 123,
-      "checkbox_label" : "aeiou",
-      "text_min_length" : 123,
-      "file_types_mode" : "aeiou",
-      "text_lines_limited" : true,
-      "number_highest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "date_earliest_value" : "2000-01-23",
-      "date_limit_mode" : "aeiou",
-      "number_lowest_value" : 1.3579000000000001069366817318950779736042022705078125,
-      "number_integers_only" : true,
-      "product_list_shipping_calc" : "aeiou",
-      "number_limit_mode" : "aeiou"
-    }
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -11411,6 +12330,153 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </a>
   </div>
   <div class="method">
+   <a name="updateOptionValue">
+   </a>
+   <div class="method-path">
+    <h2 class="put">
+     <span class="http-method">
+      PUT
+     </span>
+     /catalog/products/{product_id}/options/{option_id}/values/{value_id}
+    </h2>
+   </div>
+   <div class="method-summary">
+    (
+    <span class="nickname">
+     updateOptionValue
+    </span>
+    )
+   </div>
+   <br/>
+   <div class="method-notes">
+    Updates an Product's `OptionValue` based on the product_id, option_id and value_id.
+   </div>
+   <h3 class="field-label">
+    Path parameters
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Product` the resource belongs to.
+    </div>
+    </p>
+<div class="param">
+     option_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Option`.
+    </div>
+    </p>
+<div class="param">
+     value_id (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Path Parameter
+     </span>
+     — The ID of the `Modifier/Option Value`.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Consumes
+   </h3>
+   This API call consumes the following media types via the
+   <span class="heaader">
+    Content-Type
+   </span>
+   request header:
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Request body
+   </h3>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     OptionValue
+     <a href="#OptionValuePut">
+      OptionValuePut
+     </a>
+     (required)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      Body Parameter
+     </span>
+     — A BigCommerce `OptionValue` object.
+    </div>
+   </div>
+   <h3 class="field-label">
+    Return type
+   </h3>
+   <div class="return-type">
+    <a href="#OptionValueResponse">
+     OptionValueResponse
+    </a>
+   </div>
+   <h3 class="field-label">
+    Example data
+   </h3>
+   <div class="example-data-content-type">
+    Content-Type: application/json
+   </div>
+   <pre class="example"><code>{
+  "data" : "",
+  "meta" : { }
+}</code></pre>
+   <h3 class="field-label">
+    Produces
+   </h3>
+   This API call produces the following media types according to the
+   <span class="header">
+    Accept
+   </span>
+   request header;
+    the media type will be conveyed by the
+   <span class="heaader">
+    Content-Type
+   </span>
+   response header.
+   <ul>
+    <li>
+     <code>
+      application/json
+     </code>
+    </li>
+   </ul>
+   <h3 class="field-label">
+    Responses
+   </h3>
+   <h4 class="field-label">
+    200
+   </h4>
+   A `OptionValue` object.
+   <a href="#OptionValueResponse">
+    OptionValueResponse
+   </a>
+   <h4 class="field-label">
+    422
+   </h4>
+   The `OptionValue` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   <a href="#ErrorResponse">
+    ErrorResponse
+   </a>
+  </div>
+  <div class="method">
    <a name="updateProduct">
    </a>
    <div class="method-path">
@@ -11435,16 +12501,16 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -11465,8 +12531,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product
      <a href="#ProductPut">
       ProductPut
@@ -11495,106 +12562,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "calculated_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "gift_wrapping_options_list" : [ 123 ],
-    "page_title" : "aeiou",
-    "videos" : [ {
-      "product_id" : 123,
-      "length" : "aeiou",
-      "description" : "aeiou",
-      "id" : 123,
-      "title" : "aeiou",
-      "sort_order" : 123
-    } ],
-    "is_condition_shown" : true,
-    "variants" : [ {
-      "image_url" : "aeiou",
-      "option_values" : [ {
-        "option_display_name" : "aeiou",
-        "option_id" : 123,
-        "id" : 123,
-        "label" : "aeiou"
-      } ],
-      "weight" : 1.3579000000000001069366817318950779736042022705078125,
-      "upc" : "aeiou",
-      "bin_picking_number" : "aeiou",
-      "sku_id" : 123,
-      "purchasing_disabled_message" : "aeiou",
-      "inventory_level" : 123,
-      "price" : 1.3579000000000001069366817318950779736042022705078125,
-      "inventory_warning_level" : 123,
-      "product_id" : 123,
-      "id" : 123,
-      "purchasing_disabled" : true,
-      "sku" : "aeiou",
-      "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-    } ],
-    "type" : "aeiou",
-    "retail_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "layout_file" : "aeiou",
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "warranty" : "aeiou",
-    "is_free_shipping" : true,
-    "id" : 123,
-    "sku" : "aeiou",
-    "height" : 1.3579000000000001069366817318950779736042022705078125,
-    "custom_url" : {
-      "is_customized" : true,
-      "url" : "aeiou"
-    },
-    "images" : [ "" ],
-    "custom_fields" : [ {
-      "product_id" : 123,
-      "name" : "aeiou",
-      "id" : 123,
-      "value" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "brand_id" : 123,
-    "meta_description" : "aeiou",
-    "condition" : "aeiou",
-    "inventory_level" : 123,
-    "name" : "aeiou",
-    "inventory_tracking" : "aeiou",
-    "preorder_release_date" : "aeiou",
-    "description" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "availability" : "aeiou",
-    "search_keywords" : "aeiou",
-    "meta_keywords" : [ "aeiou" ],
-    "is_price_hidden" : true,
-    "order_quantity_minimum" : 123,
-    "availability_description" : "aeiou",
-    "fixed_cost_shipping_price" : 123,
-    "categories" : [ 123 ],
-    "sort_order" : 123,
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "order_quantity_maximum" : 123,
-    "is_visible" : true,
-    "is_preorder_only" : true,
-    "date_created" : "aeiou",
-    "preorder_message" : "aeiou",
-    "tax_class_id" : 123,
-    "bulk_pricing_rules" : [ {
-      "amount" : 1.3579000000000001069366817318950779736042022705078125,
-      "quantity_min" : 123,
-      "quantity_max" : 123,
-      "id" : 123,
-      "type" : "aeiou"
-    } ],
-    "sale_price" : 1.3579000000000001069366817318950779736042022705078125,
-    "product_tax_code" : "aeiou",
-    "depth" : 1.3579000000000001069366817318950779736042022705078125,
-    "date_modified" : "aeiou",
-    "gift_wrapping_options_type" : "aeiou",
-    "width" : 1.3579000000000001069366817318950779736042022705078125,
-    "price_hidden_label" : "aeiou",
-    "is_featured" : true,
-    "view_count" : 123
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -11637,7 +12605,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     409
    </h4>
-   `Product` was in conflict with another product. This is the result of duplicate unique values, such as name or SKU; a missing category, brand, or tax_class with which the product is being associated; or a conflicting bulk_pricing_rule.
+   `Product` was in conflict with another product. This is the result of duplicate unique values such as name or SKU, a missing category, brand, or tax_class that the product is being associate to, or a conflicting bulk pricing rule.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -11674,17 +12642,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the image is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      image_id (required)
     </div>
     <div class="param-desc">
@@ -11712,8 +12682,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productImage
      <a href="#ProductImagePut">
       ProductImagePut
@@ -11808,8 +12779,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -11819,15 +12791,15 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
    </div>
    <h3 class="field-label">
@@ -11848,11 +12820,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPut">
+      MetafieldPut
      </a>
      (required)
     </div>
@@ -11860,7 +12833,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      <span class="param-type">
       Body Parameter
      </span>
-     — `Metafield` object
+     — A `Metafield` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -11878,18 +12851,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -11955,17 +12917,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the video is being attached.
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      video_id (required)
     </div>
     <div class="param-desc">
@@ -11993,11 +12957,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      productVideo
-     <a href="#ProductVideo">
-      ProductVideo
+     <a href="#ProductVideoPut">
+      ProductVideoPut
      </a>
      (required)
     </div>
@@ -12023,26 +12988,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "product_id" : 123,
-    "length" : "aeiou",
-    "description" : "aeiou",
-    "id" : 123,
-    "title" : "aeiou",
-    "sort_order" : 123
-  },
-  "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
-  }
+  "data" : "",
+  "meta" : { }
 }</code></pre>
    <h3 class="field-label">
     Produces
@@ -12070,7 +13017,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     200
    </h4>
-   A product video
+   A product video.
    <a href="#ProductVideoResponse">
     ProductVideoResponse
    </a>
@@ -12107,18 +13054,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -12147,11 +13095,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Variant
-     <a href="#Variant">
-      Variant
+     <a href="#VariantPut">
+      VariantPut
      </a>
      (required)
     </div>
@@ -12159,7 +13108,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      <span class="param-type">
       Body Parameter
      </span>
-     — `Variant` object
+     — A `Variant` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -12177,28 +13126,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "image_url" : "aeiou",
-    "option_values" : [ {
-      "option_display_name" : "aeiou",
-      "option_id" : 123,
-      "id" : 123,
-      "label" : "aeiou"
-    } ],
-    "weight" : 1.3579000000000001069366817318950779736042022705078125,
-    "upc" : "aeiou",
-    "bin_picking_number" : "aeiou",
-    "sku_id" : 123,
-    "purchasing_disabled_message" : "aeiou",
-    "inventory_level" : 123,
-    "price" : 1.3579000000000001069366817318950779736042022705078125,
-    "inventory_warning_level" : 123,
-    "product_id" : 123,
-    "id" : 123,
-    "purchasing_disabled" : true,
-    "sku" : "aeiou",
-    "cost_price" : 1.3579000000000001069366817318950779736042022705078125
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -12264,8 +13192,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      metafield_id (required)
     </div>
     <div class="param-desc">
@@ -12275,17 +13204,18 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      — The ID of the `Metafield`.
  format: int
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      product_id (required)
     </div>
     <div class="param-desc">
      <span class="param-type">
       Path Parameter
      </span>
-     — The ID of the `Product` to which the resource belongs.
- format: int
+     — The ID of the `Product` the resource belongs to.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      variant_id (required)
     </div>
     <div class="param-desc">
@@ -12314,11 +13244,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      Metafield
-     <a href="#Metafield">
-      Metafield
+     <a href="#MetafieldPut">
+      MetafieldPut
      </a>
      (required)
     </div>
@@ -12344,18 +13275,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "updated_at" : "2000-01-23T04:56:07.000+00:00",
-    "namespace" : "aeiou",
-    "resource_type" : "aeiou",
-    "description" : "aeiou",
-    "resource_id" : 123,
-    "created_at" : "2000-01-23T04:56:07.000+00:00",
-    "id" : 123,
-    "value" : "aeiou",
-    "key" : "aeiou",
-    "permission_set" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -12442,11 +13362,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber
-     <a href="#Subscriber">
-      Subscriber
+     <a href="#SubscriberPost">
+      SubscriberPost
      </a>
      (required)
     </div>
@@ -12454,7 +13375,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      <span class="param-type">
       Body Parameter
      </span>
-     — `Subscriber` object
+     — `Subscriber` object.
     </div>
    </div>
    <h3 class="field-label">
@@ -12472,16 +13393,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "date_modified" : "aeiou",
-    "date_created" : "aeiou",
-    "last_name" : "aeiou",
-    "id" : 123,
-    "source" : "aeiou",
-    "first_name" : "aeiou",
-    "order_id" : 123,
-    "email" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -12517,14 +13429,14 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     409
    </h4>
-   The `Subscriber` was in conflict with another subscriber. This is the result of duplicate unique values, such as `email`.
+   The `Subscriber` was in conflict with another subscriber. This is the result of duplicate unique values such as email
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
    <h4 class="field-label">
     422
    </h4>
-   The `Subscriber` was not valid. This is the result of missing required fields, or of invalid data. See the response for more details.
+   The `Subscriber` was not valid. This is the result of missing required fields or invalid data. See the response for more details.
    <a href="#ErrorResponse">
     ErrorResponse
    </a>
@@ -12554,8 +13466,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -12651,8 +13564,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -12661,7 +13575,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by email.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -12670,7 +13585,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by first_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -12679,7 +13595,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by last_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -12688,7 +13605,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by source.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -12697,7 +13615,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by order_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -12705,9 +13624,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       Query Parameter
      </span>
      — Filter items by date_created.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -12715,7 +13635,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       Query Parameter
      </span>
      — Filter items by date_modified.
- format: data-time
+ format: date-time
     </div>
    </div>
    <h3 class="field-label">
@@ -12773,8 +13693,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -12815,16 +13736,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "date_modified" : "aeiou",
-    "date_created" : "aeiou",
-    "last_name" : "aeiou",
-    "id" : 123,
-    "source" : "aeiou",
-    "first_name" : "aeiou",
-    "order_id" : 123,
-    "email" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -12905,8 +13817,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Query parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -12915,7 +13828,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by email.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -12924,7 +13838,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by first_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -12933,7 +13848,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by last_name.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -12942,7 +13858,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by source.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -12951,7 +13868,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Filter items by order_id.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_created (optional)
     </div>
     <div class="param-desc">
@@ -12959,9 +13877,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       Query Parameter
      </span>
      — Filter items by date_created.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
@@ -12969,9 +13888,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       Query Parameter
      </span>
      — Filter items by date_modified.
- format: data-time
+ format: date-time
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      page (optional)
     </div>
     <div class="param-desc">
@@ -12980,7 +13900,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      — Control the page in a limited list of products.
     </div>
-    <div class="param">
+    </p>
+<div class="param">
      limit (optional)
     </div>
     <div class="param-desc">
@@ -13005,27 +13926,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : [ {
-    "date_modified" : "aeiou",
-    "date_created" : "aeiou",
-    "last_name" : "aeiou",
-    "id" : 123,
-    "source" : "aeiou",
-    "first_name" : "aeiou",
-    "order_id" : 123,
-    "email" : "aeiou"
-  } ],
+  "data" : [ "" ],
   "meta" : {
-    "per_page" : 123,
-    "total" : 123,
-    "count" : 123,
-    "links" : {
-      "next" : "aeiou",
-      "current" : "aeiou",
-      "previous" : "aeiou"
-    },
-    "total_pages" : 123,
-    "current_page" : 123
+    "pagination" : {
+      "per_page" : 123,
+      "total" : 123,
+      "count" : 123,
+      "links" : {
+        "next" : "aeiou",
+        "current" : "aeiou",
+        "previous" : "aeiou"
+      },
+      "total_pages" : 123,
+      "current_page" : 123
+    }
   }
 }</code></pre>
    <h3 class="field-label">
@@ -13054,7 +13968,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h4 class="field-label">
     200
    </h4>
-   An array of `Subscriber` objects and metadata.
+   An array of subscriber objects and metadata.
    <a href="#SubscriberCollectionResponse">
     SubscriberCollectionResponse
    </a>
@@ -13084,8 +13998,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Path parameters
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber_id (required)
     </div>
     <div class="param-desc">
@@ -13114,11 +14029,12 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <h3 class="field-label">
     Request body
    </h3>
-   <div class="field-items">
-    <div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      subscriber
-     <a href="#Subscriber">
-      Subscriber
+     <a href="#SubscriberPut">
+      SubscriberPut
      </a>
      (required)
     </div>
@@ -13144,16 +14060,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Content-Type: application/json
    </div>
    <pre class="example"><code>{
-  "data" : {
-    "date_modified" : "aeiou",
-    "date_created" : "aeiou",
-    "last_name" : "aeiou",
-    "id" : 123,
-    "source" : "aeiou",
-    "first_name" : "aeiou",
-    "order_id" : 123,
-    "email" : "aeiou"
-  },
+  "data" : "",
   "meta" : { }
 }</code></pre>
    <h3 class="field-label">
@@ -13250,9 +14157,30 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#BrandBase">
+     <code>
+      BrandBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#BrandCollectionResponse">
      <code>
       BrandCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#BrandPost">
+     <code>
+      BrandPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#BrandPut">
+     <code>
+      BrandPut
      </code>
     </a>
    </li>
@@ -13292,6 +14220,13 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#CategoryBase">
+     <code>
+      CategoryBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#CategoryCollectionResponse">
      <code>
       CategoryCollectionResponse
@@ -13302,6 +14237,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <a href="#CategoryNode">
      <code>
       CategoryNode
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CategoryPost">
+     <code>
+      CategoryPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CategoryPut">
+     <code>
+      CategoryPut
      </code>
     </a>
    </li>
@@ -13327,16 +14276,16 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
-    <a href="#CollectionMeta_links">
+    <a href="#ComplexRule">
      <code>
-      CollectionMeta_links
+      ComplexRule
      </code>
     </a>
    </li>
    <li>
-    <a href="#ComplexRule">
+    <a href="#ComplexRuleBase">
      <code>
-      ComplexRule
+      ComplexRuleBase
      </code>
     </a>
    </li>
@@ -13355,6 +14304,41 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#ComplexRuleConditionBase">
+     <code>
+      ComplexRuleConditionBase
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ComplexRuleConditionPost">
+     <code>
+      ComplexRuleConditionPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ComplexRuleConditionPut">
+     <code>
+      ComplexRuleConditionPut
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ComplexRulePost">
+     <code>
+      ComplexRulePost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ComplexRulePut">
+     <code>
+      ComplexRulePut
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#ComplexRuleResponse">
      <code>
       ComplexRuleResponse
@@ -13369,9 +14353,51 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
-    <a href="#CustomUrl">
+    <a href="#CustomFieldBase">
      <code>
-      CustomUrl
+      CustomFieldBase
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomFieldCollectionResponse">
+     <code>
+      CustomFieldCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomFieldPost">
+     <code>
+      CustomFieldPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomFieldPut">
+     <code>
+      CustomFieldPut
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomFieldResponse">
+     <code>
+      CustomFieldResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomUrlCategory">
+     <code>
+      CustomUrlCategory
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#CustomUrlProduct">
+     <code>
+      CustomUrlProduct
      </code>
     </a>
    </li>
@@ -13418,6 +14444,27 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#MetafieldBase">
+     <code>
+      MetafieldBase
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#MetafieldPost">
+     <code>
+      MetafieldPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#MetafieldPut">
+     <code>
+      MetafieldPut
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#MetafieldResponse">
      <code>
       MetafieldResponse
@@ -13432,9 +14479,30 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#ModifierBase">
+     <code>
+      ModifierBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#ModifierCollectionResponse">
      <code>
       ModifierCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierPost">
+     <code>
+      ModifierPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierPut">
+     <code>
+      ModifierPut
      </code>
     </a>
    </li>
@@ -13453,16 +14521,51 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
-    <a href="#ModifierValue_adjusters">
+    <a href="#ModifierValueBase">
      <code>
-      ModifierValue_adjusters
+      ModifierValueBase
      </code>
     </a>
    </li>
    <li>
-    <a href="#ModifierValue_adjusters_purchasing_disabled">
+    <a href="#ModifierValueBase_adjusters">
      <code>
-      ModifierValue_adjusters_purchasing_disabled
+      ModifierValueBase_adjusters
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierValueBase_adjusters_purchasing_disabled">
+     <code>
+      ModifierValueBase_adjusters_purchasing_disabled
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierValueCollectionResponse">
+     <code>
+      ModifierValueCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierValuePost">
+     <code>
+      ModifierValuePost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierValuePut">
+     <code>
+      ModifierValuePut
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ModifierValueResponse">
+     <code>
+      ModifierValueResponse
      </code>
     </a>
    </li>
@@ -13481,6 +14584,13 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#OptionBase">
+     <code>
+      OptionBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#OptionCollectionResponse">
      <code>
       OptionCollectionResponse
@@ -13491,6 +14601,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <a href="#OptionConfig">
      <code>
       OptionConfig
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionPost">
+     <code>
+      OptionPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionPut">
+     <code>
+      OptionPut
      </code>
     </a>
    </li>
@@ -13509,16 +14633,79 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
-    <a href="#OptionValueShort">
+    <a href="#OptionValueBase">
      <code>
-      OptionValueShort
+      OptionValueBase
      </code>
     </a>
    </li>
    <li>
-    <a href="#OptionValueShortPost">
+    <a href="#OptionValueCollectionResponse">
      <code>
-      OptionValueShortPost
+      OptionValueCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValuePost">
+     <code>
+      OptionValuePost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValueProductBase">
+     <code>
+      OptionValueProductBase
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValueProductPost">
+     <code>
+      OptionValueProductPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValuePut">
+     <code>
+      OptionValuePut
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValueResponse">
+     <code>
+      OptionValueResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValueVariant">
+     <code>
+      OptionValueVariant
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#OptionValueVariantPost">
+     <code>
+      OptionValueVariantPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#Pagination">
+     <code>
+      Pagination
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#Pagination_links">
+     <code>
+      Pagination_links
      </code>
     </a>
    </li>
@@ -13526,6 +14713,13 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <a href="#Product">
      <code>
       Product
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ProductBase">
+     <code>
+      ProductBase
      </code>
     </a>
    </li>
@@ -13607,9 +14801,30 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#ProductVideoBase">
+     <code>
+      ProductVideoBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#ProductVideoCollectionResponse">
      <code>
       ProductVideoCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ProductVideoPost">
+     <code>
+      ProductVideoPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#ProductVideoPut">
+     <code>
+      ProductVideoPut
      </code>
     </a>
    </li>
@@ -13635,9 +14850,30 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#SubscriberBase">
+     <code>
+      SubscriberBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#SubscriberCollectionResponse">
      <code>
       SubscriberCollectionResponse
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#SubscriberPost">
+     <code>
+      SubscriberPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#SubscriberPut">
+     <code>
+      SubscriberPut
      </code>
     </a>
    </li>
@@ -13656,6 +14892,13 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#VariantBase">
+     <code>
+      VariantBase
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#VariantCollectionResponse">
      <code>
       VariantCollectionResponse
@@ -13670,6 +14913,27 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     </a>
    </li>
    <li>
+    <a href="#VariantProductPost">
+     <code>
+      VariantProductPost
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#VariantProductPut">
+     <code>
+      VariantProductPut
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="#VariantPut">
+     <code>
+      VariantPut
+     </code>
+    </a>
+   </li>
+   <li>
     <a href="#VariantResponse">
      <code>
       VariantResponse
@@ -13678,6 +14942,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </li>
   </ol>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Adjuster">
      Adjuster
@@ -13686,8 +14951,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      adjuster (optional)
     </div>
     <div class="param-desc">
@@ -13707,7 +14973,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      percentage
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      adjuster_value (optional)
     </div>
     <div class="param-desc">
@@ -13721,6 +14988,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BaseError">
      BaseError
@@ -13730,8 +14998,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Error payload for the BigCommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -13740,9 +15009,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        Integer
       </a>
      </span>
-     The HTTP status code
+     The HTTP status code.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -13753,7 +15023,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The error title describing the particular error.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -13763,7 +15034,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -13776,6 +15048,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Brand">
      Brand
@@ -13784,19 +15057,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the brand; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -13807,7 +15070,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the brand. Must be unique.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -13818,7 +15082,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The title shown in the browser while viewing the brand.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13827,9 +15092,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        array[String]
       </a>
      </span>
-     Comma-separated list of meta keywords to include in the HTML.
+     Comma separated list of meta keywords to include in the HTML.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -13840,7 +15106,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A meta description to include.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -13849,9 +15116,108 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     A comma-separated list of keywords that can be used to locate this brand.
+     A comma separated list of keywords that can be used to locate this brand.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the brand; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="BrandBase">
+     BrandBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Brand properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the brand. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title shown in the browser while viewing the brand.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Comma separated list of meta keywords to include in the HTML.
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A meta description to include.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate this brand.
+    </div>
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -13865,6 +15231,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandCollectionResponse">
      BrandCollectionResponse
@@ -13874,8 +15241,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13885,7 +15253,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13898,6 +15267,191 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="BrandPost">
+     BrandPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create brand.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the brand. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title shown in the browser while viewing the brand.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Comma separated list of meta keywords to include in the HTML.
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A meta description to include.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate this brand.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="BrandPut">
+     BrandPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update brand.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the brand. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title shown in the browser while viewing the brand.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Comma separated list of meta keywords to include in the HTML.
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A meta description to include.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate this brand.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/brands/{brandId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the brand; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BrandResponse">
      BrandResponse
@@ -13907,8 +15461,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -13918,7 +15473,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -13931,6 +15487,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="BulkPricingRule">
      BulkPricingRule
@@ -13940,8 +15497,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Rules that offer price discounts based on quantity breaks.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -13952,7 +15510,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The ID of the bulk pricing rule.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      quantity_min (optional)
     </div>
     <div class="param-desc">
@@ -13963,7 +15522,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The minimum inclusive quantity of a product to satisfy this rule. Must be greater than or equal to zero.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      quantity_max (optional)
     </div>
     <div class="param-desc">
@@ -13974,7 +15534,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The maximum inclusive quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of 0 (zero), in which case there will be no maximum bound for this rule.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -13997,7 +15558,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      fixed
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      amount (optional)
     </div>
     <div class="param-desc">
@@ -14012,6 +15574,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CatalogSummary">
      CatalogSummary
@@ -14021,8 +15584,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     A BigCommerce Catalog Summary object describes a lightweight summary of the catalog.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      inventory_count (optional)
     </div>
     <div class="param-desc">
@@ -14033,7 +15597,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      A count of all inventory items in the catalog.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_value (optional)
     </div>
     <div class="param-desc">
@@ -14045,7 +15610,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      Total value of store's inventory.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      primary_category_id (optional)
     </div>
     <div class="param-desc">
@@ -14056,7 +15622,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      ID of the category containing the most products.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      primary_category_name (optional)
     </div>
     <div class="param-desc">
@@ -14070,6 +15637,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CatalogSummaryResponse">
      CatalogSummaryResponse
@@ -14079,8 +15647,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14090,7 +15659,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14103,6 +15673,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Category">
      Category
@@ -14112,19 +15683,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     A BigCommerce category object.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the category; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -14135,7 +15696,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14146,7 +15708,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -14157,7 +15720,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The product description, which can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      views (optional)
     </div>
     <div class="param-desc">
@@ -14168,7 +15732,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Number of views the category has on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -14179,7 +15744,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -14188,9 +15754,22 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     Custom title for the category page. If not defined, the category name will be used as the meta title.
+     Custom title for the category page, if not defined the category name will be used as the meta title.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate the category when searching the store.
+    </div>
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -14201,7 +15780,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -14212,7 +15792,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Custom meta description for the category page. If not defined, the store's default meta description will be used.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -14223,18 +15804,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The layout template file used to render this category.
     </div>
-    </p><div class="param">
-     image_url (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -14245,18 +15816,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    </p><div class="param">
-     search_keywords (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     A comma-separated list of keywords that can be used to locate the category when searching the store.
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      default_product_sort (optional)
     </div>
     <div class="param-desc">
@@ -14297,19 +15858,256 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      price_desc
     </div>
-    </p><div class="param">																			
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CustomUrl">
-       CustomUrl
+      <a href="#CustomUrlCategory">
+       CustomUrlCategory
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the category; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CategoryBase">
+     CategoryBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Category properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     parent_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
+    </div>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name displayed for the category. Name is unique with respect to the category's siblings.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product description, which can include HTML formatting.
+    </div>
+    </p>
+<div class="param">
+     views (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Number of views the category has on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom title for the category page, if not defined the category name will be used as the meta title.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate the category when searching the store.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom meta description for the category page. If not defined, the store's default meta description will be used.
+    </div>
+    </p>
+<div class="param">
+     layout_file (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The layout template file used to render this category.
+    </div>
+    </p>
+<div class="param">
+     is_visible (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
+    </div>
+    </p>
+<div class="param">
+     default_product_sort (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines how the products are sorted on category page load.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     use_store_settings
+    </div>
+    <div class="param-enum">
+     featured
+    </div>
+    <div class="param-enum">
+     newest
+    </div>
+    <div class="param-enum">
+     best_selling
+    </div>
+    <div class="param-enum">
+     alpha_asc
+    </div>
+    <div class="param-enum">
+     alpha_desc
+    </div>
+    <div class="param-enum">
+     avg_customer_review
+    </div>
+    <div class="param-enum">
+     price_asc
+    </div>
+    <div class="param-enum">
+     price_desc
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
+     custom_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomUrlCategory">
+       CustomUrlCategory
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryCollectionResponse">
      CategoryCollectionResponse
@@ -14319,8 +16117,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14330,7 +16129,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14343,6 +16143,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryNode">
      CategoryNode
@@ -14352,8 +16153,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     A BigCommerce category node object. Used to reflect parent &lt;&gt; child category relationships.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14364,7 +16166,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category; increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      parent_id (optional)
     </div>
     <div class="param-desc">
@@ -14375,7 +16178,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14386,7 +16190,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name displayed for the category. Name is unique with respect to the category's siblings.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -14397,7 +16202,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -14408,7 +16214,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The custom URL for the category on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      children (optional)
     </div>
     <div class="param-desc">
@@ -14422,6 +16229,429 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CategoryPost">
+     CategoryPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create category.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     parent_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
+    </div>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name displayed for the category. Name is unique with respect to the category's siblings.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product description, which can include HTML formatting.
+    </div>
+    </p>
+<div class="param">
+     views (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Number of views the category has on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom title for the category page, if not defined the category name will be used as the meta title.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate the category when searching the store.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom meta description for the category page. If not defined, the store's default meta description will be used.
+    </div>
+    </p>
+<div class="param">
+     layout_file (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The layout template file used to render this category.
+    </div>
+    </p>
+<div class="param">
+     is_visible (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
+    </div>
+    </p>
+<div class="param">
+     default_product_sort (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines how the products are sorted on category page load.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     use_store_settings
+    </div>
+    <div class="param-enum">
+     featured
+    </div>
+    <div class="param-enum">
+     newest
+    </div>
+    <div class="param-enum">
+     best_selling
+    </div>
+    <div class="param-enum">
+     alpha_asc
+    </div>
+    <div class="param-enum">
+     alpha_desc
+    </div>
+    <div class="param-enum">
+     avg_customer_review
+    </div>
+    <div class="param-enum">
+     price_asc
+    </div>
+    <div class="param-enum">
+     price_desc
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
+     custom_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomUrlCategory">
+       CustomUrlCategory
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CategoryPut">
+     CategoryPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update category.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     parent_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the category's parent. This field controls where the category sits in the tree of categories that organize the catalog.
+    </div>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name displayed for the category. Name is unique with respect to the category's siblings.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product description, which can include HTML formatting.
+    </div>
+    </p>
+<div class="param">
+     views (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Number of views the category has on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this category will be given when included in the menu and category pages. The lower the number, the closer to the top of the results the category will be.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom title for the category page, if not defined the category name will be used as the meta title.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma separated list of keywords that can be used to locate the category when searching the store.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Custom meta keywords for the category page. If not defined, the store's default keywords will be used. Must post as an array like: ["awesome","sauce"].
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom meta description for the category page. If not defined, the store's default meta description will be used.
+    </div>
+    </p>
+<div class="param">
+     layout_file (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The layout template file used to render this category.
+    </div>
+    </p>
+<div class="param">
+     is_visible (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the category will be displayed. If `false`, the category will be hidden from view.
+    </div>
+    </p>
+<div class="param">
+     default_product_sort (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines how the products are sorted on category page load.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     use_store_settings
+    </div>
+    <div class="param-enum">
+     featured
+    </div>
+    <div class="param-enum">
+     newest
+    </div>
+    <div class="param-enum">
+     best_selling
+    </div>
+    <div class="param-enum">
+     alpha_asc
+    </div>
+    <div class="param-enum">
+     alpha_desc
+    </div>
+    <div class="param-enum">
+     avg_customer_review
+    </div>
+    <div class="param-enum">
+     price_asc
+    </div>
+    <div class="param-enum">
+     price_desc
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Image URL used for this category on the storefront. Images can be uploaded via form file post to `/categories/{categoryId}/image`, or by providing a publicly accessible URL in this field.
+    </div>
+    </p>
+<div class="param">
+     custom_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomUrlCategory">
+       CustomUrlCategory
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryResponse">
      CategoryResponse
@@ -14431,8 +16661,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14442,7 +16673,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14455,6 +16687,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CategoryTreeCollectionResponse">
      CategoryTreeCollectionResponse
@@ -14464,8 +16697,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14475,7 +16709,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14488,6 +16723,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="CollectionMeta">
      CollectionMeta
@@ -14497,121 +16733,22 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Data about the response, including pagination and collection totals.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     total (optional)
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     pagination (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     Total number of items return in the result set.
-    </div>
-    </p><div class="param">
-     count (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     Total number of items in the collection.
-    </div>
-    </p><div class="param">
-     per_page (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The amount of items returned in the collection per page, controlled by the limit parameter.
-    </div>
-    </p><div class="param">
-     current_page (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The page you are currently on within the collection.
-    </div>
-    </p><div class="param">
-     total_pages (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The total number of pages in the collection.
-    </div>
-    </p><div class="param">
-     links (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#CollectionMeta_links">
-       CollectionMeta_links
+      <a href="#Pagination">
+       Pagination
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
-   <h3 class="field-label">
-    <a name="CollectionMeta_links">
-     CollectionMeta_links
-    </a>
-   </h3>
-   <div class="model-description">
-    Pagination links for the previous and next parts of the whole collection.
-   </div>
-   <br/>
-   <div class="field-items">
-    </p><div class="param">
-     previous (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     Link to the previous page returned in the response.
-    </div>
-    </p><div class="param">
-     current (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     Link to the current page returned in the response.
-    </div>
-    </p><div class="param">
-     next (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     Link to the next page returned in the response.
-    </div>
-   </div>
-  </div>
-  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRule">
      ComplexRule
@@ -14621,19 +16758,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Apply price, weight, image, or availabilty adjustments to product, based on a set of conditions. A complex rule's condition must either contain more than one modifier value, or else contain a modifier value and a variant id.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the rule; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -14644,7 +16771,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the product with which the rule is associated; increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -14655,7 +16783,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Priority this rule will be given, when making adjustments to the product properties.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      enabled (optional)
     </div>
     <div class="param-desc">
@@ -14666,7 +16795,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      stop (optional)
     </div>
     <div class="param-desc">
@@ -14677,27 +16807,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether other rules should not be applied after this rule has been applied.
     </div>
-    </p><div class="param">
-     price_adjuster (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#Adjuster">
-       Adjuster
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     weight_adjuster (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#Adjuster">
-       Adjuster
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -14708,7 +16819,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -14719,7 +16831,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Message displayed on the storefront when a rule disables the purchasing of a product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_hidden (optional)
     </div>
     <div class="param-desc">
@@ -14730,7 +16843,42 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     price_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     weight_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule; increments sequentially.
+    </div>
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -14741,7 +16889,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The URL for an image displayed on the storefront when the conditions are applied.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      conditions (optional)
     </div>
     <div class="param-desc">
@@ -14754,6 +16903,127 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRuleBase">
+     ComplexRuleBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common ComplexRule properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the product with which the rule is associated; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this rule will be given, when making adjustments to the product properties.
+    </div>
+    </p>
+<div class="param">
+     enabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
+    </div>
+    </p>
+<div class="param">
+     stop (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether other rules should not be applied after this rule has been applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Message displayed on the storefront when a rule disables the purchasing of a product.
+    </div>
+    </p>
+<div class="param">
+     purchasing_hidden (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     price_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     weight_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleCollectionResponse">
      ComplexRuleCollectionResponse
@@ -14763,8 +17033,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14774,7 +17045,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14787,6 +17059,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleCondition">
      ComplexRuleCondition
@@ -14796,8 +17069,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Complex rules may return with conditions that apply to one or more variants, or with a single modifier value (if the rules were created using the v2 API or the control panel). Complex rules created or updated in the v3 API must have conditions that either reference multiple `modifier_value_id`'s, or else reference a `modifier_value_id` and a `variant_id`.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -14808,7 +17082,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the rule condition; increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      rule_id (optional)
     </div>
     <div class="param-desc">
@@ -14819,7 +17094,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the rule with which the condition is associated.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      modifier_id (optional)
     </div>
     <div class="param-desc">
@@ -14830,7 +17106,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the modifier with which the rule condition is associated.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      modifier_value_id (optional)
     </div>
     <div class="param-desc">
@@ -14841,7 +17118,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the modifier value with which the rule condition is associated.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      variant_id (optional)
     </div>
     <div class="param-desc">
@@ -14852,7 +17130,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique numeric ID of the variant the rule condition is associated with.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      combination_id (optional)
     </div>
     <div class="param-desc">
@@ -14866,6 +17145,503 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRuleConditionBase">
+     ComplexRuleConditionBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common ComplexRuleCondition properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule condition; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     rule_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule with which the condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_value_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier value with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     variant_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the variant the rule condition is associated with.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRuleConditionPost">
+     ComplexRuleConditionPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create conditions on a complex rule.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule condition; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     rule_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule with which the condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_value_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier value with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     variant_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the variant the rule condition is associated with.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRuleConditionPut">
+     ComplexRuleConditionPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update conditions on a complex rule.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule condition; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     rule_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule with which the condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     modifier_value_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier value with which the rule condition is associated.
+    </div>
+    </p>
+<div class="param">
+     variant_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the variant the rule condition is associated with.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRulePost">
+     ComplexRulePost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create complex rule on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the product with which the rule is associated; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this rule will be given, when making adjustments to the product properties.
+    </div>
+    </p>
+<div class="param">
+     enabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
+    </div>
+    </p>
+<div class="param">
+     stop (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether other rules should not be applied after this rule has been applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Message displayed on the storefront when a rule disables the purchasing of a product.
+    </div>
+    </p>
+<div class="param">
+     purchasing_hidden (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     price_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     weight_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     conditions (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ComplexRuleConditionPost">
+       array[ComplexRuleConditionPost]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ComplexRulePut">
+     ComplexRulePut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update complex rule on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the product with which the rule is associated; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority this rule will be given, when making adjustments to the product properties.
+    </div>
+    </p>
+<div class="param">
+     enabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule is to be used when adjusting a product's price, weight, image, or availabilty.
+    </div>
+    </p>
+<div class="param">
+     stop (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether other rules should not be applied after this rule has been applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should disable purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Message displayed on the storefront when a rule disables the purchasing of a product.
+    </div>
+    </p>
+<div class="param">
+     purchasing_hidden (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag for determining whether the rule should hide purchasing of a product when the conditions are applied.
+    </div>
+    </p>
+<div class="param">
+     price_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     weight_adjuster (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Adjuster">
+       Adjuster
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the rule; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     conditions (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ComplexRuleConditionPut">
+       array[ComplexRuleConditionPut]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ComplexRuleResponse">
      ComplexRuleResponse
@@ -14875,8 +17651,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -14886,7 +17663,132 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Meta">
+       Meta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomField">
+     CustomField
+    </a>
+   </h3>
+   <div class="model-description">
+    Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product's page, such as a book's ISBN or a DVD's release date.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the custom field; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomFieldBase">
+     CustomFieldBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common CustomField properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomFieldCollectionResponse">
+     CustomFieldCollectionResponse
+    </a>
+   </h3>
+   <div class="model-description">
+    Response payload for the Bigcommerce API.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomField">
+       array[CustomField]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -14899,28 +17801,19 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="CustomField">
-     CustomField
+    <a name="CustomFieldPost">
+     CustomFieldPost
     </a>
    </h3>
    <div class="model-description">
-    Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product's page, such as a book's ISBN or a DVD's release date.
+    The model for a POST to create custom field on a product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the custom field; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -14931,7 +17824,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The name of the field, shown on the storefront, orders, etc.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      value (optional)
     </div>
     <div class="param-desc">
@@ -14940,33 +17834,98 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     The values or text of the field, shown on the storefront, orders, etc.
-    </div>
-    </p><div class="param">
-     product_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric identifier for the product with which the field is associated.
+     The name of the field, shown on the storefront, orders, etc.
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="CustomUrl">
-     CustomUrl
+    <a name="CustomFieldPut">
+     CustomFieldPut
     </a>
    </h3>
    <div class="model-description">
-    The custom URL for the product on the storefront.
+    The model for a PUT to update custom field on a product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, shown on the storefront, orders, etc.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomFieldResponse">
+     CustomFieldResponse
+    </a>
+   </h3>
+   <div class="model-description">
+    Response payload for the Bigcommerce API.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomField">
+       CustomField
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Meta">
+       Meta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomUrlCategory">
+     CustomUrlCategory
+    </a>
+   </h3>
+   <div class="model-description">
+    The custom URL for the category on the storefront.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      url (optional)
     </div>
     <div class="param-desc">
@@ -14975,9 +17934,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     Product URL on the storefront.
+     Category URL on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_customized (optional)
     </div>
     <div class="param-desc">
@@ -14991,6 +17951,45 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="CustomUrlProduct">
+     CustomUrlProduct
+    </a>
+   </h3>
+   <div class="model-description">
+    The custom URL for the product on the storefront.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Product URL on the storefront.
+    </div>
+    </p>
+<div class="param">
+     is_customized (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Returns `true` if the URL has been changed from its default state (the auto-assigned URL that BigCommerce provides).
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="DetailedErrors">
      DetailedErrors
@@ -14999,10 +17998,11 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
+   <div class="field-items"> <b>Properties:</b>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ErrorResponse">
      ErrorResponse
@@ -15011,8 +18011,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -15021,9 +18022,10 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        Integer
       </a>
      </span>
-     The HTTP status code
+     The HTTP status code.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -15034,7 +18036,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The error title describing the particular error.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15044,7 +18047,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -15054,7 +18058,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      errors (optional)
     </div>
     <div class="param-desc">
@@ -15067,6 +18072,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ImageResponse">
      ImageResponse
@@ -15076,8 +18082,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15087,7 +18094,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15100,19 +18108,21 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Meta">
      Meta
     </a>
    </h3>
    <div class="model-description">
-    Empty meta object; might be used later.
+    Empty meta object, may be used later
    </div>
    <br/>
-   <div class="field-items">
+   <div class="field-items"> <b>Properties:</b>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetaFieldCollectionResponse">
      MetaFieldCollectionResponse
@@ -15122,8 +18132,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15133,7 +18144,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15146,6 +18158,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Metafield">
      Metafield
@@ -15155,30 +18168,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Allows app partners to write custom data to various resources in the API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique identifier for the metafields.
-    </div>
-    </p><div class="param">
-     description (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     Description for the metafields.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      permission_set (optional)
     </div>
     <div class="param-desc">
@@ -15201,7 +18193,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      write
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      namespace (optional)
     </div>
     <div class="param-desc">
@@ -15212,7 +18205,44 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      Namespace for the metafield, for organizational purposes.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     key (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, for example: `location_id`, `color`.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The value of the field, for example: `1`, `blue`.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Description for the metafields.
+    </div>
+    </p>
+<div class="param">
      resource_type (optional)
     </div>
     <div class="param-desc">
@@ -15221,7 +18251,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     The type of resource with which the metafield is associated.
+     The type of resource that the metafield is associated with.
     </div>
     <div class="param-enum-header">
      Enum:
@@ -15238,7 +18268,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     <div class="param-enum">
      variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      resource_id (optional)
     </div>
     <div class="param-desc">
@@ -15249,29 +18280,20 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      </span>
      The unique identifier for the resource with which the metafield is associated.
     </div>
-    </p><div class="param">
-     key (optional)
+    </p>
+<div class="param">
+     id (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#integer">
+       Integer
       </a>
      </span>
-     The name of the field, for example: `location_id`, `color`.
+     The unique identifier for the metafields.
     </div>
-    </p><div class="param">
-     value (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The value of the field, for example: `1`, `blue`
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      created_at (optional)
     </div>
     <div class="param-desc">
@@ -15283,7 +18305,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
      Date and time of the metafield's creation.
  format: date-time
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      updated_at (optional)
     </div>
     <div class="param-desc">
@@ -15298,6 +18321,394 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="MetafieldBase">
+     MetafieldBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Metafield properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     permission_set (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines whether the field is completely private to the app that owns the field (`app_only`), or visible to other API consumers (`read`), or completely open for reading and writing to other apps (`write`).
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     app_only
+    </div>
+    <div class="param-enum">
+     read
+    </div>
+    <div class="param-enum">
+     write
+    </div>
+    </p>
+<div class="param">
+     namespace (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Namespace for the metafield, for organizational purposes.
+    </div>
+    </p>
+<div class="param">
+     key (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, for example: `location_id`, `color`.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The value of the field, for example: `1`, `blue`.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Description for the metafields.
+    </div>
+    </p>
+<div class="param">
+     resource_type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of resource that the metafield is associated with.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     category
+    </div>
+    <div class="param-enum">
+     brand
+    </div>
+    <div class="param-enum">
+     product
+    </div>
+    <div class="param-enum">
+     variant
+    </div>
+    </p>
+<div class="param">
+     resource_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique identifier for the resource with which the metafield is associated.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="MetafieldPost">
+     MetafieldPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create metafield.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     permission_set (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines whether the field is completely private to the app that owns the field (`app_only`), or visible to other API consumers (`read`), or completely open for reading and writing to other apps (`write`).
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     app_only
+    </div>
+    <div class="param-enum">
+     read
+    </div>
+    <div class="param-enum">
+     write
+    </div>
+    </p>
+<div class="param">
+     namespace (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Namespace for the metafield, for organizational purposes.
+    </div>
+    </p>
+<div class="param">
+     key (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, for example: `location_id`, `color`.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The value of the field, for example: `1`, `blue`.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Description for the metafields.
+    </div>
+    </p>
+<div class="param">
+     resource_type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of resource that the metafield is associated with.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     category
+    </div>
+    <div class="param-enum">
+     brand
+    </div>
+    <div class="param-enum">
+     product
+    </div>
+    <div class="param-enum">
+     variant
+    </div>
+    </p>
+<div class="param">
+     resource_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique identifier for the resource with which the metafield is associated.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="MetafieldPut">
+     MetafieldPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update metafield.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     permission_set (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Determines whether the field is completely private to the app that owns the field (`app_only`), or visible to other API consumers (`read`), or completely open for reading and writing to other apps (`write`).
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     app_only
+    </div>
+    <div class="param-enum">
+     read
+    </div>
+    <div class="param-enum">
+     write
+    </div>
+    </p>
+<div class="param">
+     namespace (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Namespace for the metafield, for organizational purposes.
+    </div>
+    </p>
+<div class="param">
+     key (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the field, for example: `location_id`, `color`.
+    </div>
+    </p>
+<div class="param">
+     value (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The value of the field, for example: `1`, `blue`.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Description for the metafields.
+    </div>
+    </p>
+<div class="param">
+     resource_type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of resource that the metafield is associated with.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     category
+    </div>
+    <div class="param-enum">
+     brand
+    </div>
+    <div class="param-enum">
+     product
+    </div>
+    <div class="param-enum">
+     variant
+    </div>
+    </p>
+<div class="param">
+     resource_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique identifier for the resource with which the metafield is associated.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique identifier for the metafields.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="MetafieldResponse">
      MetafieldResponse
@@ -15307,8 +18718,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15318,7 +18730,8 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15331,6 +18744,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Modifier">
      Modifier
@@ -15339,52 +18753,9 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the modifier; increments sequentially.
-    </div>
-    </p><div class="param">
-     product_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the product to which the option belongs.
-    </div>
-    </p><div class="param">
-     name (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The unique option name. Auto-generated from the display name, a timestamp, and the product ID.
-    </div>
-    </p><div class="param">
-     display_name (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The name of the option shown on the storefront.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15393,7 +18764,7 @@ Values: id, name, sku, price, date_modified, date_last_imported, inventory_level
        String
       </a>
      </span>
-     The type of modifier, which determines how it will display on the storefront. For reference, the former v2 API values are:
+     The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values:
 D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons,
 RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
     </div>
@@ -15436,7 +18807,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     <div class="param-enum">
      swatch
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      required (optional)
     </div>
     <div class="param-desc">
@@ -15445,9 +18817,10 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
        Boolean
       </a>
      </span>
-     Whether or not this modifer is required at checkout.
+     Whether this modifer is required or not at checkout
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -15457,7 +18830,157 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValue">
+       array[ModifierValue]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the modifier; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the product to which the option belongs.
+    </div>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The unique option name. Auto-generated from the display name, a timestamp, and the product ID.
+    </div>
+    </p>
+<div class="param">
+     display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option shown on the storefront.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierBase">
+     ModifierBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Modifier properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values:
+D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons,
+RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     date
+    </div>
+    <div class="param-enum">
+     checkbox
+    </div>
+    <div class="param-enum">
+     file
+    </div>
+    <div class="param-enum">
+     text
+    </div>
+    <div class="param-enum">
+     multi_line_text
+    </div>
+    <div class="param-enum">
+     numbers_only_text
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     required (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Whether this modifer is required or not at checkout
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -15470,6 +18993,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierCollectionResponse">
      ModifierCollectionResponse
@@ -15479,8 +19003,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15490,7 +19015,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15503,6 +19029,221 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierPost">
+     ModifierPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create modifier on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values:
+D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons,
+RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     date
+    </div>
+    <div class="param-enum">
+     checkbox
+    </div>
+    <div class="param-enum">
+     file
+    </div>
+    <div class="param-enum">
+     text
+    </div>
+    <div class="param-enum">
+     multi_line_text
+    </div>
+    <div class="param-enum">
+     numbers_only_text
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     required (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Whether this modifer is required or not at checkout
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValue">
+       array[ModifierValue]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option shown on the storefront.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierPut">
+     ModifierPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update modifier on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values:
+D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons,
+RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     date
+    </div>
+    <div class="param-enum">
+     checkbox
+    </div>
+    <div class="param-enum">
+     file
+    </div>
+    <div class="param-enum">
+     text
+    </div>
+    <div class="param-enum">
+     multi_line_text
+    </div>
+    <div class="param-enum">
+     numbers_only_text
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     required (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Whether this modifer is required or not at checkout
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValue">
+       array[ModifierValue]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierResponse">
      ModifierResponse
@@ -15512,8 +19253,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15523,19 +19265,21 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CollectionMeta">
-       CollectionMeta
+      <a href="#Meta">
+       Meta
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ModifierValue">
      ModifierValue
@@ -15544,19 +19288,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the value; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -15567,7 +19301,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -15578,7 +19313,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The text display identifying the value on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -15589,7 +19325,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -15600,29 +19337,116 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      adjusters (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#ModifierValue_adjusters">
-       ModifierValue_adjusters
+      <a href="#ModifierValueBase_adjusters">
+       ModifierValueBase_adjusters
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the value; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierValueBase">
+     ModifierValueBase
+    </a>
+   </h3>
+   <div class="model-description">
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the value will be displayed on the product page.
+    </div>
+    </p>
+<div class="param">
+     value_data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#object">
+       Object
+      </a>
+     </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
+    </div>
+    </p>
+<div class="param">
+     adjusters (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValueBase_adjusters">
+       ModifierValueBase_adjusters
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="ModifierValue_adjusters">
-     ModifierValue_adjusters
+    <a name="ModifierValueBase_adjusters">
+     ModifierValueBase_adjusters
     </a>
    </h3>
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -15632,7 +19456,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -15642,7 +19467,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -15653,29 +19479,32 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The URL for an image displayed on the storefront when the modifier value is selected.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#ModifierValue_adjusters_purchasing_disabled">
-       ModifierValue_adjusters_purchasing_disabled
+      <a href="#ModifierValueBase_adjusters_purchasing_disabled">
+       ModifierValueBase_adjusters_purchasing_disabled
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="ModifierValue_adjusters_purchasing_disabled">
-     ModifierValue_adjusters_purchasing_disabled
+    <a name="ModifierValueBase_adjusters_purchasing_disabled">
+     ModifierValueBase_adjusters_purchasing_disabled
     </a>
    </h3>
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -15686,7 +19515,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      Flag for whether the modifier value disables purchasing when selected on the storefront. This can be used for temporarily disabling a particular modifier value.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      message (optional)
     </div>
     <div class="param-desc">
@@ -15700,6 +19530,237 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierValueCollectionResponse">
+     ModifierValueCollectionResponse
+    </a>
+   </h3>
+   <div class="model-description">
+    Response payload for the Bigcommerce API.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValue">
+       array[ModifierValue]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CollectionMeta">
+       CollectionMeta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierValuePost">
+     ModifierValuePost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create modifier value on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the value will be displayed on the product page.
+    </div>
+    </p>
+<div class="param">
+     value_data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#object">
+       Object
+      </a>
+     </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
+    </div>
+    </p>
+<div class="param">
+     adjusters (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValueBase_adjusters">
+       ModifierValueBase_adjusters
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierValuePut">
+     ModifierValuePut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update modifier value on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the value will be displayed on the product page.
+    </div>
+    </p>
+<div class="param">
+     value_data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#object">
+       Object
+      </a>
+     </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
+    </div>
+    </p>
+<div class="param">
+     adjusters (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValueBase_adjusters">
+       ModifierValueBase_adjusters
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the value; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ModifierValueResponse">
+     ModifierValueResponse
+    </a>
+   </h3>
+   <div class="model-description">
+    Response payload for the Bigcommerce API.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ModifierValue">
+       ModifierValue
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Meta">
+       Meta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="NotFound">
      NotFound
@@ -15709,8 +19770,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
     Error payload for the BigCommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      status (optional)
     </div>
     <div class="param-desc">
@@ -15721,7 +19783,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      404 HTTP status code.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -15732,7 +19795,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The error title describing the particular error.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15742,7 +19806,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      instance (optional)
     </div>
     <div class="param-desc">
@@ -15755,6 +19820,7 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Option">
      Option
@@ -15763,8 +19829,9 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -15773,9 +19840,10 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
        Integer
       </a>
      </span>
-     The unique numeric ID of the option; increments sequentially.
+     The unique numerical ID of the option, increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -15784,20 +19852,10 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
        Integer
       </a>
      </span>
-     The unique numeric ID of the product to which the option belongs.
+     The unique numerical ID of the product that the option belongs to.
     </div>
-    </p><div class="param">
-     name (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The unique option name, auto-generated from the display name, a timestamp, and the product ID.
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      display_name (optional)
     </div>
     <div class="param-desc">
@@ -15808,7 +19866,8 @@ RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, 
      </span>
      The name of the option shown on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -15841,7 +19900,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      swatch
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      config (optional)
     </div>
     <div class="param-desc">
@@ -15851,7 +19911,126 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValue">
+       array[OptionValue]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name unique option name auto-generated from the display name, a timestamp, and the product id.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionBase">
+     OptionBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Option properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the option, increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the product that the option belongs to.
+    </div>
+    </p>
+<div class="param">
+     display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option shown on the storefront.
+    </div>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of option, which determines how it will display on the storefront. For reference, the former v2 API values are:
+RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
@@ -15864,6 +20043,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionCollectionResponse">
      OptionCollectionResponse
@@ -15873,8 +20053,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -15884,7 +20065,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -15897,6 +20079,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionConfig">
      OptionConfig
@@ -15905,8 +20088,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      default_value (optional)
     </div>
     <div class="param-desc">
@@ -15917,7 +20101,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date, text, multi_line_text, numbers_only_text) The default value. Shown on a date option as an ISO-8601–formatted string, or on a text option as a string.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      checked_by_default (optional)
     </div>
     <div class="param-desc">
@@ -15928,7 +20113,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Flag for setting the checkbox to be checked by default.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      checkbox_label (optional)
     </div>
     <div class="param-desc">
@@ -15939,7 +20125,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (checkbox) Label displayed for the checkbox option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_limited (optional)
     </div>
     <div class="param-desc">
@@ -15950,7 +20137,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (date) Flag to limit the dates allowed to be entered on a date option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -15973,7 +20161,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      latest
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_earliest_value (optional)
     </div>
     <div class="param-desc">
@@ -15985,7 +20174,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The earliest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_latest_value (optional)
     </div>
     <div class="param-desc">
@@ -15997,7 +20187,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      (date) The latest date allowed to be entered on the date option, as an ISO-8601 formatted string.
  format: date
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      file_types_mode (optional)
     </div>
     <div class="param-desc">
@@ -16017,7 +20208,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      all
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      file_types_supported (optional)
     </div>
     <div class="param-desc">
@@ -16031,7 +20223,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
   `documents` - Allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`).
   `other` - Allows file types defined in the `file_types_other` array.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      file_types_other (optional)
     </div>
     <div class="param-desc">
@@ -16042,7 +20235,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) A list of other file types allowed with the file upload option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      file_max_size (optional)
     </div>
     <div class="param-desc">
@@ -16053,7 +20247,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (file) The maximum size for a file that can be used with the file upload option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      text_characters_limited (optional)
     </div>
     <div class="param-desc">
@@ -16064,7 +20259,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) Flag to validate the length of a text or multi-line text input.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      text_min_length (optional)
     </div>
     <div class="param-desc">
@@ -16075,7 +20271,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The minimum length allowed for a text or multi-line text option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      text_max_length (optional)
     </div>
     <div class="param-desc">
@@ -16086,7 +20283,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (text, multi_line_text) The maximum length allowed for a text or multi line text option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      text_lines_limited (optional)
     </div>
     <div class="param-desc">
@@ -16097,7 +20295,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      text_max_lines (optional)
     </div>
     <div class="param-desc">
@@ -16108,7 +20307,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (multi_line_text) The maximum number of lines allowed on a multi-line text input.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      number_limited (optional)
     </div>
     <div class="param-desc">
@@ -16119,7 +20319,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the value of a number option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      number_limit_mode (optional)
     </div>
     <div class="param-desc">
@@ -16142,7 +20343,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      range
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      number_lowest_value (optional)
     </div>
     <div class="param-desc">
@@ -16153,7 +20355,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      number_highest_value (optional)
     </div>
     <div class="param-desc">
@@ -16164,7 +20367,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) The highest allowed value for a number option if `number_limited` is true.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      number_integers_only (optional)
     </div>
     <div class="param-desc">
@@ -16175,7 +20379,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (numbers_only_text) Flag to limit the input on a number option to whole numbers only.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_list_adjusts_inventory (optional)
     </div>
     <div class="param-desc">
@@ -16186,7 +20391,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_list_adjusts_pricing (optional)
     </div>
     <div class="param-desc">
@@ -16197,7 +20403,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_list_shipping_calc (optional)
     </div>
     <div class="param-desc">
@@ -16223,6 +20430,219 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionPost">
+     OptionPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create option on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the option, increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the product that the option belongs to.
+    </div>
+    </p>
+<div class="param">
+     display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option shown on the storefront.
+    </div>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of option, which determines how it will display on the storefront. For reference, the former v2 API values are:
+RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValue">
+       array[OptionValue]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionPut">
+     OptionPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update option on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the option, increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the product that the option belongs to.
+    </div>
+    </p>
+<div class="param">
+     display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option shown on the storefront.
+    </div>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of option, which determines how it will display on the storefront. For reference, the former v2 API values are:
+RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     radio_buttons
+    </div>
+    <div class="param-enum">
+     rectangles
+    </div>
+    <div class="param-enum">
+     dropdown
+    </div>
+    <div class="param-enum">
+     product_list
+    </div>
+    <div class="param-enum">
+     product_list_with_images
+    </div>
+    <div class="param-enum">
+     swatch
+    </div>
+    </p>
+<div class="param">
+     config (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionConfig">
+       OptionConfig
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValue">
+       array[OptionValue]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionResponse">
      OptionResponse
@@ -16232,8 +20652,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -16243,19 +20664,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CollectionMeta">
-       CollectionMeta
+      <a href="#Meta">
+       Meta
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="OptionValue">
      OptionValue
@@ -16264,19 +20687,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the value; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_default (optional)
     </div>
     <div class="param-desc">
@@ -16287,7 +20700,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -16298,7 +20712,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The text display identifying the value on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16309,7 +20724,82 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the value will be displayed on the product page.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     value_data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#object">
+       Object
+      </a>
+     </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the value; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValueBase">
+     OptionValueBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common OptionValue properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the value will be displayed on the product page.
+    </div>
+    </p>
+<div class="param">
      value_data (optional)
     </div>
     <div class="param-desc">
@@ -16323,17 +20813,80 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="OptionValueShort">
-     OptionValueShort
+    <a name="OptionValueCollectionResponse">
+     OptionValueCollectionResponse
     </a>
    </h3>
    <div class="model-description">
+    Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValue">
+       array[OptionValue]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CollectionMeta">
+       CollectionMeta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValuePost">
+     OptionValuePost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create option value on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
@@ -16341,18 +20894,36 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        Integer
       </a>
      </span>
+     The order in which the value will be displayed on the product page.
     </div>
-    </p><div class="param">
-     option_id (optional)
+    </p>
+<div class="param">
+     value_data (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
+      <a href="#object">
+       Object
       </a>
      </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
     </div>
-    </p><div class="param">
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValueProductBase">
+     OptionValueProductBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common OptionValueProduct properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -16363,7 +20934,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The name of the option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -16377,16 +20949,19 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
-    <a name="OptionValueShortPost">
-     OptionValueShortPost
+    <a name="OptionValueProductPost">
+     OptionValueProductPost
     </a>
    </h3>
    <div class="model-description">
+    The model for a POST to create option values with a product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      option_display_name (optional)
     </div>
     <div class="param-desc">
@@ -16395,9 +20970,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The name of the option to be created on POST.
+     The name of the option.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      label (optional)
     </div>
     <div class="param-desc">
@@ -16406,11 +20982,352 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The label of the option value to be created on POST.
+     The label of the option value.
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValuePut">
+     OptionValuePut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update option value on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     is_default (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     The flag for preselecting a value as the default on the storefront. This field is not supported for swatch options/modifiers.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The text display identifying the value on the storefront.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the value will be displayed on the product page.
+    </div>
+    </p>
+<div class="param">
+     value_data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#object">
+       Object
+      </a>
+     </span>
+     Extra data describing the value, based on the type of option or modifier with which the value is associated. `swatch` requires an array of colors, with up to three hexidecimal color keys; `product list` requires a `product_id`; and `checkbox` requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the value; increments sequentially.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValueResponse">
+     OptionValueResponse
+    </a>
+   </h3>
+   <div class="model-description">
+    Response payload for the Bigcommerce API.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     data (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValue">
+       OptionValue
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     meta (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Meta">
+       Meta
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValueVariant">
+     OptionValueVariant
+    </a>
+   </h3>
+   <div class="model-description">
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     option_display_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The name of the option.
+    </div>
+    </p>
+<div class="param">
+     label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The label of the option value.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="OptionValueVariantPost">
+     OptionValueVariantPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create option values with a variant.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="Pagination">
+     Pagination
+    </a>
+   </h3>
+   <div class="model-description">
+    Data about the response, including pagination and collection totals.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     total (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Total number of items in the result set.
+    </div>
+    </p>
+<div class="param">
+     count (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Total number of items in the collection response.
+    </div>
+    </p>
+<div class="param">
+     per_page (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The amount of items returned in the collection per page, controlled by the limit parameter.
+    </div>
+    </p>
+<div class="param">
+     current_page (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The page you are currently on within the collection.
+    </div>
+    </p>
+<div class="param">
+     total_pages (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The total number of pages in the collection.
+    </div>
+    </p>
+<div class="param">
+     links (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#Pagination_links">
+       Pagination_links
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="Pagination_links">
+     Pagination_links
+    </a>
+   </h3>
+   <div class="model-description">
+    Pagination links for the previous and next parts of the whole collection.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     previous (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Link to the previous page returned in the response.
+    </div>
+    </p>
+<div class="param">
+     current (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Link to the current page returned in the response.
+    </div>
+    </p>
+<div class="param">
+     next (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Link to the next page returned in the response.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Product">
      Product
@@ -16420,19 +21337,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     A BigCommerce Product object describes a single purchasable unit or a collection of purchasable units.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the product; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -16443,7 +21350,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -16452,7 +21360,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The product type: physical - a physical stock unit; digital - a digital download.
+     The product type: physical - a physical stock unit, digital - a digital download
     </div>
     <div class="param-enum-header">
      Enum:
@@ -16463,7 +21371,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -16472,9 +21381,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     User-defined product code/stock keeping unit (SKU).
+     User defined product code/stock keeping unit (SKU).
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -16485,7 +21395,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -16497,7 +21408,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -16509,7 +21421,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -16521,7 +21434,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -16533,7 +21447,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -16545,7 +21460,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -16557,7 +21473,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -16569,7 +21486,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -16581,7 +21499,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -16592,7 +21511,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -16603,19 +21523,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    </p><div class="param">
-     calculated_price (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#double">
-       Double
-      </a>
-     </span>
-     The price of the product, unless a `sale_price` is set.
- format: double
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -16626,7 +21535,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -16637,7 +21547,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -16648,7 +21559,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -16659,7 +21571,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -16682,18 +21595,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
+      <a href="#double">
+       Double
       </a>
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
+ format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -16704,7 +21620,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -16715,7 +21632,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -16726,7 +21644,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     related_products (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     An array of IDs for the related products.
+    </div>
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -16737,7 +21668,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -16748,7 +21680,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -16759,7 +21692,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -16770,7 +21704,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16781,7 +21716,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -16804,7 +21740,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -16815,7 +21752,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -16824,7 +21762,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.
+     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift-wrapping on the product; `list` – provide a list of IDs in `gift_wrapping_options_list` field.
     </div>
     <div class="param-enum-header">
      Enum:
@@ -16838,7 +21776,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -16849,7 +21788,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -16860,7 +21800,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -16871,7 +21812,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    </p><div class="param">
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     New
+    </div>
+    <div class="param-enum">
+     Used
+    </div>
+    <div class="param-enum">
+     Refurbished
+    </div>
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -16882,7 +21836,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -16893,7 +21848,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -16904,7 +21860,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -16915,7 +21872,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -16926,7 +21884,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -16937,31 +21896,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    </p><div class="param">
-     date_created (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was created.
- format: data-time
-    </div>
-    </p><div class="param">
-     date_modified (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was modified.
- format: data-time
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -16972,19 +21908,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#DateTime">
+       Date
       </a>
      </span>
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
- format: data-time
+ format: date-time
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -16995,7 +21933,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -17006,7 +21945,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -17017,7 +21957,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -17028,47 +21969,19 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
-     images (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductImage">
-       array[ProductImage]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     videos (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductVideo">
-       array[ProductVideo]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     custom_fields (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#CustomField">
-       array[CustomField]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CustomUrl">
-       CustomUrl
+      <a href="#CustomUrlProduct">
+       CustomUrlProduct
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -17078,7 +21991,92 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the product; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     calculated_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The price of the product, unless a `sale_price` is set.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     custom_fields (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomField">
+       array[CustomField]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     date_created (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#DateTime">
+       Date
+      </a>
+     </span>
+     The date on which the product was created.
+ format: date-time
+    </div>
+    </p>
+<div class="param">
+     date_modified (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#DateTime">
+       Date
+      </a>
+     </span>
+     The date on which the product was modified.
+ format: date-time
+    </div>
+    </p>
+<div class="param">
+     images (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ProductImage">
+       array[ProductImage]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     videos (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#ProductVideo">
+       array[ProductVideo]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
@@ -17091,6 +22089,674 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ProductBase">
+     ProductBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Product properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product name.
+    </div>
+    </p>
+<div class="param">
+     type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product type: physical - a physical stock unit, digital - a digital download
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     physical
+    </div>
+    <div class="param-enum">
+     digital
+    </div>
+    </p>
+<div class="param">
+     sku (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     User defined product code/stock keeping unit (SKU).
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product description, which can include HTML formatting.
+    </div>
+    </p>
+<div class="param">
+     weight (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     Weight of the product, which can be used when calculating shipping costs.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     width (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     Width of the product, which can be used when calculating shipping costs.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     depth (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     Depth of the product, which can be used when calculating shipping costs.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     height (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     Height of the product, which can be used when calculating shipping costs.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The price of the product. The price should include or exclude tax, based on the store settings.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     cost_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     retail_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The retail cost of the product. If entered, the retail cost price will be shown on the product page.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     sale_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     tax_class_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
+    </div>
+    </p>
+<div class="param">
+     product_tax_code (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
+    </div>
+    </p>
+<div class="param">
+     categories (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
+    </div>
+    </p>
+<div class="param">
+     brand_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The ID associated with the product's brand.
+    </div>
+    </p>
+<div class="param">
+     inventory_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
+    </div>
+    </p>
+<div class="param">
+     inventory_warning_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
+    </div>
+    </p>
+<div class="param">
+     inventory_tracking (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The type of inventory tracking for the product. Values are: none - inventory levels will not be tracked; product - inventory levels will be tracked using the `inventory_level` and `inventory_warning_level` fields; variant - inventory levels will be tracked based on variants, which maintain their own warning levels and inventory levels.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     none
+    </div>
+    <div class="param-enum">
+     product
+    </div>
+    <div class="param-enum">
+     variant
+    </div>
+    </p>
+<div class="param">
+     fixed_cost_shipping_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
+ format: double
+    </div>
+    </p>
+<div class="param">
+     is_free_shipping (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
+    </div>
+    </p>
+<div class="param">
+     is_visible (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
+    </div>
+    </p>
+<div class="param">
+     is_featured (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
+    </div>
+    </p>
+<div class="param">
+     related_products (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     An array of IDs for the related products.
+    </div>
+    </p>
+<div class="param">
+     warranty (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Warranty information displayed on the product page. Can include HTML formatting.
+    </div>
+    </p>
+<div class="param">
+     bin_picking_number (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The BIN picking number for the product.
+    </div>
+    </p>
+<div class="param">
+     layout_file (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The layout template file used to render this product.
+    </div>
+    </p>
+<div class="param">
+     upc (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
+    </div>
+    </p>
+<div class="param">
+     search_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     A comma-separated list of keywords that can be used to locate the product when searching the store.
+    </div>
+    </p>
+<div class="param">
+     availability (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Availability of the product. Availability options are: available - the product can be purchased in the storefront; disabled - the product is listed in the storefront, but cannot be purchased; preorder - the product is listed for pre-orders.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     available
+    </div>
+    <div class="param-enum">
+     disabled
+    </div>
+    <div class="param-enum">
+     preorder
+    </div>
+    </p>
+<div class="param">
+     availability_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
+    </div>
+    </p>
+<div class="param">
+     gift_wrapping_options_type (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift-wrapping on the product; `list` – provide a list of IDs in `gift_wrapping_options_list` field.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     any
+    </div>
+    <div class="param-enum">
+     none
+    </div>
+    <div class="param-enum">
+     list
+    </div>
+    </p>
+<div class="param">
+     gift_wrapping_options_list (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     A list of gift-wrapping option IDs.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
+    </div>
+    </p>
+<div class="param">
+     condition (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
+    </div>
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     New
+    </div>
+    <div class="param-enum">
+     Used
+    </div>
+    <div class="param-enum">
+     Refurbished
+    </div>
+    </p>
+<div class="param">
+     is_condition_shown (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     Flag used to determine whether the product condition is shown to the customer on the product page.
+    </div>
+    </p>
+<div class="param">
+     order_quantity_minimum (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The minimum quantity an order must contain, to be eligible to purchase this product.
+    </div>
+    </p>
+<div class="param">
+     order_quantity_maximum (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The maximum quantity an order can contain when purchasing the product.
+    </div>
+    </p>
+<div class="param">
+     page_title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom title for the product page. If not defined, the product name will be used as the meta title.
+    </div>
+    </p>
+<div class="param">
+     meta_keywords (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       array[String]
+      </a>
+     </span>
+     Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
+    </div>
+    </p>
+<div class="param">
+     meta_description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom meta description for the product page. If not defined, the store's default meta description will be used.
+    </div>
+    </p>
+<div class="param">
+     view_count (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The number of times the product has been viewed.
+    </div>
+    </p>
+<div class="param">
+     preorder_release_date (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#DateTime">
+       Date
+      </a>
+     </span>
+     Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
+ format: date-time
+    </div>
+    </p>
+<div class="param">
+     preorder_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
+    </div>
+    </p>
+<div class="param">
+     is_preorder_only (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
+    </div>
+    </p>
+<div class="param">
+     is_price_hidden (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
+    </div>
+    </p>
+<div class="param">
+     price_hidden_label (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
+    </div>
+    </p>
+<div class="param">
+     custom_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomUrlProduct">
+       CustomUrlProduct
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     bulk_pricing_rules (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#BulkPricingRule">
+       array[BulkPricingRule]
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductCollectionResponse">
      ProductCollectionResponse
@@ -17100,8 +22766,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17111,7 +22778,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17124,6 +22792,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImage">
      ProductImage
@@ -17133,8 +22802,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The full ProductImage model.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17145,7 +22815,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17156,7 +22827,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17167,7 +22839,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -17178,7 +22851,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the image; increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_id (optional)
     </div>
     <div class="param-desc">
@@ -17189,7 +22863,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric identifier for the product with which the image is associated.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -17200,7 +22875,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The local path to the original image file uploaded to BigCommerce.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      url_zoom (optional)
     </div>
     <div class="param-desc">
@@ -17211,7 +22887,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The zoom URL for this image. By default, this is used as the zoom image on product pages when zoom images are enabled.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      url_standard (optional)
     </div>
     <div class="param-desc">
@@ -17222,7 +22899,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The standard URL for this image. By default, this is used for product-page images.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      url_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17233,7 +22911,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The thumbnail URL for this image. By default, this is the image size used on the category page and in side panels.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      url_tiny (optional)
     </div>
     <div class="param-desc">
@@ -17244,9 +22923,23 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The tiny URL for this image. By default, this is the image size used for thumbnails beneath the product image on a product page.
     </div>
+    </p>
+<div class="param">
+     date_modified (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#DateTime">
+       Date
+      </a>
+     </span>
+     The date on which the product image was modified.
+ format: date-time
+    </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageBase">
      ProductImageBase
@@ -17256,8 +22949,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Common ProductImage properties.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17268,7 +22962,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17279,7 +22974,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17293,6 +22989,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageCollectionResponse">
      ProductImageCollectionResponse
@@ -17302,8 +22999,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17313,7 +23011,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17326,6 +23025,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImagePost">
      ProductImagePost
@@ -17335,8 +23035,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a POST to create an image on a product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17347,7 +23048,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17358,7 +23060,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17369,7 +23072,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The description for the image.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -17380,7 +23084,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Must be a fully qualified URL path, including protocol.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_file (optional)
     </div>
     <div class="param-desc">
@@ -17394,6 +23099,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImagePut">
      ProductImagePut
@@ -17403,8 +23109,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     The model for a PUT to update applicable ProductImage fields.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      is_thumbnail (optional)
     </div>
     <div class="param-desc">
@@ -17415,7 +23122,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag for identifying whether the image is used as the product's thumbnail.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17426,7 +23134,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The order in which the image will be displayed on the product page. Higher integers give the image a lower priority. When updating, if the image is given a lower priority, all images with a `sort_order` the same as or greater than the image's new `sort_order` value will have their `sort_order`s reordered.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17440,6 +23149,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductImageResponse">
      ProductImageResponse
@@ -17449,8 +23159,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -17460,7 +23171,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -17473,27 +23185,19 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductPost">
      ProductPost
     </a>
    </h3>
    <div class="model-description">
+    The model for a POST to create product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the product; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -17504,7 +23208,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -17513,7 +23218,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The product type: physical - a physical stock unit; digital - a digital download.
+     The product type: physical - a physical stock unit, digital - a digital download
     </div>
     <div class="param-enum-header">
      Enum:
@@ -17524,7 +23229,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -17533,9 +23239,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     User-defined product code/stock keeping unit (SKU).
+     User defined product code/stock keeping unit (SKU).
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -17546,7 +23253,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -17558,7 +23266,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -17570,7 +23279,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -17582,7 +23292,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -17594,7 +23305,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -17606,7 +23318,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -17618,7 +23331,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -17630,7 +23344,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -17642,7 +23357,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -17653,7 +23369,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -17664,19 +23381,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    </p><div class="param">
-     calculated_price (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#double">
-       Double
-      </a>
-     </span>
-     The price of the product, unless a `sale_price` is set.
- format: double
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -17687,7 +23393,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -17698,7 +23405,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -17709,7 +23417,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -17720,7 +23429,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -17743,18 +23453,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
+      <a href="#double">
+       Double
       </a>
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
+ format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -17765,7 +23478,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -17776,7 +23490,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -17787,7 +23502,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     related_products (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     An array of IDs for the related products.
+    </div>
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -17798,7 +23526,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -17809,7 +23538,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -17820,7 +23550,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -17831,7 +23562,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -17842,7 +23574,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -17865,7 +23598,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -17876,7 +23610,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -17885,7 +23620,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.
+     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift-wrapping on the product; `list` – provide a list of IDs in `gift_wrapping_options_list` field.
     </div>
     <div class="param-enum-header">
      Enum:
@@ -17899,7 +23634,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -17910,7 +23646,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -17921,7 +23658,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -17932,7 +23670,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    </p><div class="param">
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     New
+    </div>
+    <div class="param-enum">
+     Used
+    </div>
+    <div class="param-enum">
+     Refurbished
+    </div>
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -17943,7 +23694,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -17954,7 +23706,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -17965,7 +23718,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -17976,7 +23730,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -17987,7 +23742,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -17998,31 +23754,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    </p><div class="param">
-     date_created (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was created.
- format: data-time
-    </div>
-    </p><div class="param">
-     date_modified (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was modified.
- format: data-time
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -18033,19 +23766,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#DateTime">
+       Date
       </a>
      </span>
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
- format: data-time
+ format: date-time
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -18056,7 +23791,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -18067,7 +23803,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -18078,7 +23815,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -18089,47 +23827,19 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
-     images (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductImage">
-       array[ProductImage]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     videos (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductVideo">
-       array[ProductVideo]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     custom_fields (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#CustomField">
-       array[CustomField]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CustomUrl">
-       CustomUrl
+      <a href="#CustomUrlProduct">
+       CustomUrlProduct
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -18139,40 +23849,44 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     custom_fields (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomField">
+       array[CustomField]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#VariantPost">
-       array[VariantPost]
+      <a href="#VariantProductPost">
+       array[VariantProductPost]
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductPut">
      ProductPut
     </a>
    </h3>
    <div class="model-description">
+    The model for a PUT to update product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric ID of the product; increments sequentially.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      name (optional)
     </div>
     <div class="param-desc">
@@ -18183,7 +23897,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product name.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      type (optional)
     </div>
     <div class="param-desc">
@@ -18192,7 +23907,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The product type: physical - a physical stock unit; digital - a digital download.
+     The product type: physical - a physical stock unit, digital - a digital download
     </div>
     <div class="param-enum-header">
      Enum:
@@ -18203,7 +23918,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      digital
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sku (optional)
     </div>
     <div class="param-desc">
@@ -18212,9 +23928,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     User-defined product code/stock keeping unit (SKU).
+     User defined product code/stock keeping unit (SKU).
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      description (optional)
     </div>
     <div class="param-desc">
@@ -18225,7 +23942,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product description, which can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -18237,7 +23955,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Weight of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      width (optional)
     </div>
     <div class="param-desc">
@@ -18249,7 +23968,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Width of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      depth (optional)
     </div>
     <div class="param-desc">
@@ -18261,7 +23981,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Depth of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      height (optional)
     </div>
     <div class="param-desc">
@@ -18273,7 +23994,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      Height of the product, which can be used when calculating shipping costs.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -18285,7 +24007,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The price of the product. The price should include or exclude tax, based on the store settings.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -18297,7 +24020,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The cost price of the product. Stored for reference only; it is not used or displayed anywhere on the store.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      retail_price (optional)
     </div>
     <div class="param-desc">
@@ -18309,7 +24033,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      The retail cost of the product. If entered, the retail cost price will be shown on the product page.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sale_price (optional)
     </div>
     <div class="param-desc">
@@ -18321,7 +24046,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      If entered, the sale price will be used instead of value in the price field when calculating the product's cost.
  format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      tax_class_id (optional)
     </div>
     <div class="param-desc">
@@ -18332,7 +24058,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the tax class applied to the product. (NOTE: Value ignored if automatic tax is enabled.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      product_tax_code (optional)
     </div>
     <div class="param-desc">
@@ -18343,19 +24070,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Accepts AvaTax System Tax Codes, which identify products and services that fall into special sales-tax categories. By using these codes, merchants who subscribe to Avalara Premium can calculate sales taxes more accurately. Stores without Avalara Premium will ignore the code when calculating sales tax. Do not pass more than one code. The codes are case-sensitive. For details, please see Avalara's documentation.
     </div>
-    </p><div class="param">
-     calculated_price (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#double">
-       Double
-      </a>
-     </span>
-     The price of the product, unless a `sale_price` is set.
- format: double
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      categories (optional)
     </div>
     <div class="param-desc">
@@ -18366,7 +24082,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      An array of IDs for the categories to which this product belongs. When updating a product, if an array of categories is supplied, all product categories will be overwritten. Does not accept more than 1,000 ID values.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      brand_id (optional)
     </div>
     <div class="param-desc">
@@ -18377,7 +24094,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID associated with the product's brand.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -18388,7 +24106,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Current inventory level of the product. Simple inventory tracking must be enabled (See the inventory_tracking field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -18399,7 +24118,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Inventory Warning level for the product. When the product's inventory level drops below the warning level, the store owner will be informed. Simple inventory tracking must be enabled (see the `inventory_tracking` field) for this to take any effect.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_tracking (optional)
     </div>
     <div class="param-desc">
@@ -18422,18 +24142,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      fixed_cost_shipping_price (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
+      <a href="#double">
+       Double
       </a>
      </span>
      A fixed shipping cost for the product. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
+ format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_free_shipping (optional)
     </div>
     <div class="param-desc">
@@ -18444,7 +24167,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to indicate whether the product has free shipping. If `true`, the shipping cost for the product will be zero.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_visible (optional)
     </div>
     <div class="param-desc">
@@ -18455,7 +24179,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be displayed to customers browsing the store. If `true`, the product will be displayed. If `false`, the product will be hidden from view.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_featured (optional)
     </div>
     <div class="param-desc">
@@ -18466,7 +24191,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag to determine whether the product should be included in the `featured products` panel when viewing the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     related_products (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       array[Integer]
+      </a>
+     </span>
+     An array of IDs for the related products.
+    </div>
+    </p>
+<div class="param">
      warranty (optional)
     </div>
     <div class="param-desc">
@@ -18477,7 +24215,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Warranty information displayed on the product page. Can include HTML formatting.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -18488,7 +24227,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The BIN picking number for the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      layout_file (optional)
     </div>
     <div class="param-desc">
@@ -18499,7 +24239,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The layout template file used to render this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -18510,7 +24251,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product UPC code, which is used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      search_keywords (optional)
     </div>
     <div class="param-desc">
@@ -18521,7 +24263,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A comma-separated list of keywords that can be used to locate the product when searching the store.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability (optional)
     </div>
     <div class="param-desc">
@@ -18544,7 +24287,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      preorder
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      availability_description (optional)
     </div>
     <div class="param-desc">
@@ -18555,7 +24299,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Availability text displayed on the checkout page, under the product title. Tells the customer how long it will normally take to ship this product, such as 'Usually ships in 24 hours.'
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_type (optional)
     </div>
     <div class="param-desc">
@@ -18564,7 +24309,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift wrapping on the product; `list` – provide a list of IDs in the `gift_wrapping_options_list` field.
+     Type of gift-wrapping options. Values: `any` - allow any gift-wrapping options in the store; `none` - disallow gift-wrapping on the product; `list` – provide a list of IDs in `gift_wrapping_options_list` field.
     </div>
     <div class="param-enum-header">
      Enum:
@@ -18578,7 +24323,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     <div class="param-enum">
      list
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      gift_wrapping_options_list (optional)
     </div>
     <div class="param-desc">
@@ -18589,7 +24335,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      A list of gift-wrapping option IDs.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      sort_order (optional)
     </div>
     <div class="param-desc">
@@ -18600,7 +24347,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Priority to give this product when included in product lists on category pages and in search results. Lower integers will place the product closer to the top of the results.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      condition (optional)
     </div>
     <div class="param-desc">
@@ -18611,7 +24359,20 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     </div>
-    </p><div class="param">
+    <div class="param-enum-header">
+     Enum:
+    </div>
+    <div class="param-enum">
+     New
+    </div>
+    <div class="param-enum">
+     Used
+    </div>
+    <div class="param-enum">
+     Refurbished
+    </div>
+    </p>
+<div class="param">
      is_condition_shown (optional)
     </div>
     <div class="param-desc">
@@ -18622,7 +24383,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Flag used to determine whether the product condition is shown to the customer on the product page.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_minimum (optional)
     </div>
     <div class="param-desc">
@@ -18633,7 +24395,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The minimum quantity an order must contain, to be eligible to purchase this product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_quantity_maximum (optional)
     </div>
     <div class="param-desc">
@@ -18644,7 +24407,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The maximum quantity an order can contain when purchasing the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      page_title (optional)
     </div>
     <div class="param-desc">
@@ -18655,7 +24419,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom title for the product page. If not defined, the product name will be used as the meta title.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_keywords (optional)
     </div>
     <div class="param-desc">
@@ -18666,7 +24431,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta keywords for the product page. If not defined, the store's default keywords will be used.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta_description (optional)
     </div>
     <div class="param-desc">
@@ -18677,31 +24443,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom meta description for the product page. If not defined, the store's default meta description will be used.
     </div>
-    </p><div class="param">
-     date_created (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was created.
- format: data-time
-    </div>
-    </p><div class="param">
-     date_modified (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The date on which the product was modified.
- format: data-time
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      view_count (optional)
     </div>
     <div class="param-desc">
@@ -18712,19 +24455,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The number of times the product has been viewed.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_release_date (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#DateTime">
+       Date
       </a>
      </span>
      Pre-order release date. See the `availability` field for details on setting a product's availability to accept pre-orders.
- format: data-time
+ format: date-time
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      preorder_message (optional)
     </div>
     <div class="param-desc">
@@ -18735,7 +24480,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Custom expected-date message to display on the product page. If undefined, the message defaults to the storewide setting. Can contain the `%%DATE%%` placeholder, which will be substituted for the release date.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_preorder_only (optional)
     </div>
     <div class="param-desc">
@@ -18746,7 +24492,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If set to `false`, the product will not change its availability from 	`preorder` to `available` on the release date. Otherwise, on the release date the product's availability/status will change to `available`.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      is_price_hidden (optional)
     </div>
     <div class="param-desc">
@@ -18757,7 +24504,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      False by default, indicating that this product's price should be shown on the product page. If set to `true`, the price is hidden. (NOTE: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price_hidden_label (optional)
     </div>
     <div class="param-desc">
@@ -18768,47 +24516,19 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      By default, an empty string. If `is_price_hidden` is `true`, the value of `price_hidden_label` is displayed instead of the price. (NOTE: To successfully set a non-empty string value with `is_price_hidden` set to `true`, the `availability` value must be `disabled`.)
     </div>
-    </p><div class="param">
-     images (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductImage">
-       array[ProductImage]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     videos (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#ProductVideo">
-       array[ProductVideo]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     custom_fields (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#CustomField">
-       array[CustomField]
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      custom_url (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CustomUrl">
-       CustomUrl
+      <a href="#CustomUrlProduct">
+       CustomUrlProduct
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bulk_pricing_rules (optional)
     </div>
     <div class="param-desc">
@@ -18818,19 +24538,44 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numerical ID of the product, increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     custom_fields (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#CustomField">
+       array[CustomField]
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      variants (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#Variant">
-       array[Variant]
+      <a href="#VariantProductPut">
+       array[VariantProductPut]
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductResponse">
      ProductResponse
@@ -18840,8 +24585,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18851,7 +24597,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18864,6 +24611,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideo">
      ProductVideo
@@ -18873,52 +24621,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     A product video model.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The ID of a YouTube video.
-    </div>
-    </p><div class="param">
-     product_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The unique numeric identifier for the product with which the image is associated.
-    </div>
-    </p><div class="param">
-     sort_order (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
-    </div>
-    </p><div class="param">
-     description (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The description for the video. If left blank, this will be filled in according to data on YouTube.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      title (optional)
     </div>
     <div class="param-desc">
@@ -18929,7 +24634,56 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The title for the video. If left blank, this will be filled in according to data on YouTube.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The description for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The ID of a YouTube video.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric identifier for the product with which the image is associated.
+    </div>
+    </p>
+<div class="param">
      length (optional)
     </div>
     <div class="param-desc">
@@ -18943,6 +24697,57 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ProductVideoBase">
+     ProductVideoBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common ProductVideo properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The description for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoCollectionResponse">
      ProductVideoCollectionResponse
@@ -18952,8 +24757,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18963,7 +24769,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -18976,6 +24783,131 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ProductVideoPost">
+     ProductVideoPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create video on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The description for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The ID of a YouTube video.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric identifier for the product with which the image is associated.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="ProductVideoPut">
+     ProductVideoPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update video on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     title (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The title for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     description (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The description for the video. If left blank, this will be filled in according to data on YouTube.
+    </div>
+    </p>
+<div class="param">
+     sort_order (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The order in which the video will be displayed on the product page. Higher integers give the video a lower priority. When updating, if the video is given a lower priority, all videos with a `sort_order` the same as or greater than the video's new `sort_order` value will have their `sort_order`s reordered.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ProductVideoResponse">
      ProductVideoResponse
@@ -18985,8 +24917,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -18996,19 +24929,21 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#CollectionMeta">
-       CollectionMeta
+      <a href="#Meta">
+       Meta
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="ResourceImage">
      ResourceImage
@@ -19018,8 +24953,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     An object containing a publicly accessible image URL, or a form post that contains an image file.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -19033,6 +24969,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Subscriber">
      Subscriber
@@ -19041,8 +24978,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      id (optional)
     </div>
     <div class="param-desc">
@@ -19053,7 +24991,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The unique numeric ID of the subscriber; increments sequentially.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      email (optional)
     </div>
     <div class="param-desc">
@@ -19064,7 +25003,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The email of the subscriber. Must be unique.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      first_name (optional)
     </div>
     <div class="param-desc">
@@ -19075,7 +25015,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The first name of the subscriber.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      last_name (optional)
     </div>
     <div class="param-desc">
@@ -19086,7 +25027,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The last name of the subscriber.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      source (optional)
     </div>
     <div class="param-desc">
@@ -19097,7 +25039,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      order_id (optional)
     </div>
     <div class="param-desc">
@@ -19108,20 +25051,61 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The ID of the source order, if source was an order.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_modified (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#DateTime">
+       Date
       </a>
      </span>
      The date on which the subscriber was modified.
- format: data-time
+ format: date-time
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      date_created (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#DateTime">
+       Date
+      </a>
+     </span>
+     The date of which the subscriber was created.
+ format: date-time
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="SubscriberBase">
+     SubscriberBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Subscriber properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the subscriber; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     email (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
@@ -19129,12 +25113,60 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The date on which the subscriber was created.
- format: data-time
+     The email of the subscriber. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     first_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The first name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     last_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The last name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     source (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
+    </div>
+    </p>
+<div class="param">
+     order_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The ID of the source order, if source was an order.
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberCollectionResponse">
      SubscriberCollectionResponse
@@ -19144,8 +25176,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19155,7 +25188,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19168,6 +25202,179 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="SubscriberPost">
+     SubscriberPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create subscriber.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the subscriber; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     email (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The email of the subscriber. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     first_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The first name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     last_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The last name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     source (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
+    </div>
+    </p>
+<div class="param">
+     order_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The ID of the source order, if source was an order.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="SubscriberPut">
+     SubscriberPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update subscriber.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The unique numeric ID of the subscriber; increments sequentially.
+    </div>
+    </p>
+<div class="param">
+     email (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The email of the subscriber. Must be unique.
+    </div>
+    </p>
+<div class="param">
+     first_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The first name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     last_name (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The last name of the subscriber.
+    </div>
+    </p>
+<div class="param">
+     source (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The source of the subscriber. Values are: `storefront`, `order`, or `custom`.
+    </div>
+    </p>
+<div class="param">
+     order_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     The ID of the source order, if source was an order.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="SubscriberResponse">
      SubscriberResponse
@@ -19177,8 +25384,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19188,7 +25396,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19201,6 +25410,7 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="Variant">
      Variant
@@ -19209,49 +25419,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    <div class="model-description">
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     product_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     sku (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     sku_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     Read-only reference to v2 API's SKU ID. Null if it is a base variant.
-    </div>
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      cost_price (optional)
     </div>
     <div class="param-desc">
@@ -19262,7 +25432,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The cost price of the variant. format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
@@ -19273,7 +25444,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
@@ -19282,9 +25454,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        Double
       </a>
      </span>
-     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight. format: double
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -19295,7 +25468,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -19306,7 +25480,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -19315,9 +25490,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -19328,7 +25504,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -19337,9 +25514,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        Integer
       </a>
      </span>
-     Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -19350,7 +25528,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -19361,13 +25540,59 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     sku (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     sku_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Read-only reference to v2 API's SKU ID. Null if it is a base variant.
+    </div>
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#OptionValueShort">
-       array[OptionValueShort]
+      <a href="#OptionValueVariant">
+       array[OptionValueVariant]
       </a>
      </span>
      Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.
@@ -19375,6 +25600,141 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="VariantBase">
+     VariantBase
+    </a>
+   </h3>
+   <div class="model-description">
+    Common Variant properties.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     cost_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The cost price of the variant. format: double
+    </div>
+    </p>
+<div class="param">
+     price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
+    </div>
+    </p>
+<div class="param">
+     weight (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     If `true`, this variant will not be purchasable on the storefront.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
+    </div>
+    </p>
+<div class="param">
+     upc (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The UPC code used in feeds for shopping comparison sites and external channel integrations.
+    </div>
+    </p>
+<div class="param">
+     inventory_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
+    </div>
+    </p>
+<div class="param">
+     inventory_warning_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     When the variant hits this inventory level, it is considered low stock.
+    </div>
+    </p>
+<div class="param">
+     bin_picking_number (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Identifies where in a warehouse the variant is located.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantCollectionResponse">
      VariantCollectionResponse
@@ -19384,8 +25744,9 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     Response payload for the Bigcommerce API.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19395,7 +25756,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19408,79 +25770,55 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
    </div>
   </div>
   <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantPost">
      VariantPost
     </a>
    </h3>
    <div class="model-description">
+    The model for a POST to create variant on a product.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
-     id (optional)
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     cost_price (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#integer">
-       Integer
+      <a href="#double">
+       Double
       </a>
      </span>
+     The cost price of the variant. format: double
     </div>
-    </p><div class="param">
-     product_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     sku (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-    </div>
-    </p><div class="param">
-     sku_id (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#integer">
-       Integer
-      </a>
-     </span>
-     Read-only reference to v2 API's SKU ID. Null if it is a base variant.
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      price (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#double">
+       Double
       </a>
      </span>
-     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price.
+     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      weight (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#string">
-       String
+      <a href="#double">
+       Double
       </a>
      </span>
-     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's `weight` field) will be used as the base weight.
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled (optional)
     </div>
     <div class="param-desc">
@@ -19491,7 +25829,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `true`, this variant will not be purchasable on the storefront.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      purchasing_disabled_message (optional)
     </div>
     <div class="param-desc">
@@ -19502,7 +25841,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      image_url (optional)
     </div>
     <div class="param-desc">
@@ -19511,20 +25851,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        String
       </a>
      </span>
-     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images (not specific to the variant) should be stored on the product.
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
     </div>
-    </p><div class="param">
-     cost_price (optional)
-    </div>
-    <div class="param-desc">
-     <span class="param-type">
-      <a href="#string">
-       String
-      </a>
-     </span>
-     The variant's cost price.
-    </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      upc (optional)
     </div>
     <div class="param-desc">
@@ -19535,7 +25865,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      The UPC code used in feeds for shopping comparison sites and external channel integrations.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_level (optional)
     </div>
     <div class="param-desc">
@@ -19544,9 +25875,10 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
        Integer
       </a>
      </span>
-     Inventory level for the variant, which is used when the product's `inventory_tracking` is set to `variant`.
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      inventory_warning_level (optional)
     </div>
     <div class="param-desc">
@@ -19557,7 +25889,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      When the variant hits this inventory level, it is considered low stock.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      bin_picking_number (optional)
     </div>
     <div class="param-desc">
@@ -19568,30 +25901,524 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
      </span>
      Identifies where in a warehouse the variant is located.
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     sku (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
      option_values (optional)
     </div>
     <div class="param-desc">
      <span class="param-type">
-      <a href="#OptionValueShortPost">
-       array[OptionValueShortPost]
+      <a href="#OptionValueVariantPost">
+       array[OptionValueVariantPost]
+      </a>
+     </span>
+     Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="VariantProductPost">
+     VariantProductPost
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a POST to create variant with a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     cost_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The cost price of the variant. format: double
+    </div>
+    </p>
+<div class="param">
+     price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
+    </div>
+    </p>
+<div class="param">
+     weight (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     If `true`, this variant will not be purchasable on the storefront.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
+    </div>
+    </p>
+<div class="param">
+     upc (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The UPC code used in feeds for shopping comparison sites and external channel integrations.
+    </div>
+    </p>
+<div class="param">
+     inventory_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
+    </div>
+    </p>
+<div class="param">
+     inventory_warning_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     When the variant hits this inventory level, it is considered low stock.
+    </div>
+    </p>
+<div class="param">
+     bin_picking_number (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Identifies where in a warehouse the variant is located.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     sku (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     option_values (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#OptionValueProductPost">
+       array[OptionValueProductPost]
       </a>
      </span>
     </div>
    </div>
   </div>
   <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="VariantProductPut">
+     VariantProductPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update variant with a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     cost_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The cost price of the variant. format: double
+    </div>
+    </p>
+<div class="param">
+     price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
+    </div>
+    </p>
+<div class="param">
+     weight (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     If `true`, this variant will not be purchasable on the storefront.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
+    </div>
+    </p>
+<div class="param">
+     upc (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The UPC code used in feeds for shopping comparison sites and external channel integrations.
+    </div>
+    </p>
+<div class="param">
+     inventory_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
+    </div>
+    </p>
+<div class="param">
+     inventory_warning_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     When the variant hits this inventory level, it is considered low stock.
+    </div>
+    </p>
+<div class="param">
+     bin_picking_number (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Identifies where in a warehouse the variant is located.
+    </div>
+    </p>
+<div class="param">
+     product_id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+    </p>
+<div class="param">
+     sku (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
+   <h3 class="field-label">
+    <a name="VariantPut">
+     VariantPut
+    </a>
+   </h3>
+   <div class="model-description">
+    The model for a PUT to update variant on a product.
+   </div>
+   <br/>
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
+     cost_price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     The cost price of the variant. format: double
+    </div>
+    </p>
+<div class="param">
+     price (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base price on the storefront. If this value is null, the product's default price (set in the Product resource's `price` field) will be used as the base price. format: double
+    </div>
+    </p>
+<div class="param">
+     weight (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#double">
+       Double
+      </a>
+     </span>
+     This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. format: double
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#boolean">
+       Boolean
+      </a>
+     </span>
+     If `true`, this variant will not be purchasable on the storefront.
+    </div>
+    </p>
+<div class="param">
+     purchasing_disabled_message (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     If `purchasing_disabled` is `true`, this message should show on the storefront when the variant is selected.
+    </div>
+    </p>
+<div class="param">
+     image_url (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The image that will be displayed when this variant is selected on the storefront. When updating a SKU image, send the publicly accessible URL. Supported image formats are JPEG, PNG, and GIF. Generic product images not specific to the variant should be stored on the product.
+    </div>
+    </p>
+<div class="param">
+     upc (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     The UPC code used in feeds for shopping comparison sites and external channel integrations.
+    </div>
+    </p>
+<div class="param">
+     inventory_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     Inventory level for the variant, which is used when the product's inventory_tracking is set to variant
+    </div>
+    </p>
+<div class="param">
+     inventory_warning_level (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+     When the variant hits this inventory level, it is considered low stock.
+    </div>
+    </p>
+<div class="param">
+     bin_picking_number (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#string">
+       String
+      </a>
+     </span>
+     Identifies where in a warehouse the variant is located.
+    </div>
+    </p>
+<div class="param">
+     id (optional)
+    </div>
+    <div class="param-desc">
+     <span class="param-type">
+      <a href="#integer">
+       Integer
+      </a>
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="model">
+   </p>
    <h3 class="field-label">
     <a name="VariantResponse">
      VariantResponse
     </a>
    </h3>
    <div class="model-description">
-    Successful response
+    Successful response.
    </div>
    <br/>
-   <div class="field-items">
-    </p><div class="param">
+   <div class="field-items"> <b>Properties:</b>
+    </p>
+<div class="param">
      data (optional)
     </div>
     <div class="param-desc">
@@ -19601,7 +26428,8 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
       </a>
      </span>
     </div>
-    </p><div class="param">
+    </p>
+<div class="param">
      meta (optional)
     </div>
     <div class="param-desc">
@@ -19613,12 +26441,5 @@ RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = produc
     </div>
    </div>
   </div>
-
-<h2> <a name="definitions"></a> Definitions </h2>
-
-<div id="integer"> <b>Integer:</b> A whole number. </div>
-
-<div id="string"> <b>String:</b> A sequence of characters (letters, numerals, symbols, and/or punctuation marks). </div> 
-
-</body>
+ </body>
 </html>
