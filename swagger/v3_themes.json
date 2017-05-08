@@ -1,0 +1,172 @@
+swagger: '2.0'
+info:
+  title: Theme API
+  description: Theme APIs
+  version: 1.0.0
+host: api.bigcommerce.com
+schemes:
+  - https
+basePath: '/stores/{{store_id}}/v3/themes'
+produces:
+  - application/json
+paths:
+  /current:
+    get:
+      summary: Current Theme
+      description: Gets the active storefront theme information
+      responses:
+        '200':
+          description: Successfully fetched current theme
+          schema:
+            type: object
+            properties:
+              id:
+                description: Variation ID of the theme. Only applies to Stencil
+                type: string
+                format: uuid
+              theme_name:
+                type: string
+              variation_name:
+                type: string
+              price:
+                type: integer
+              partner:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  contact_url:
+                    type: string
+                  contact_email:
+                    type: string
+              description:
+                type: string
+              industries:
+                type: array
+                items:
+                  type: string
+              features:
+                type: array
+                items:
+                  type: string
+              optimized_for:
+                type: array
+                items:
+                  type: string
+              screenshots:
+                type: object
+                properties:
+                  desktop:
+                    properties:
+                      large_preview:
+                        type: string
+                        format: url
+                      large_thumb:
+                        type: string
+                        format: url
+                      small_thumb:
+                        type: string
+                        format: url
+                  mobile:
+                    properties:
+                      large_preview:
+                        type: string
+                        format: url
+                      large_thumb:
+                        type: string
+                        format: url
+                      small_thumb:
+                        type: string
+                        format: url
+              urls:
+                type: object
+                properties:
+                  demo:
+                    type: string
+                  documentation:
+                    type: string
+              display_version:
+                type: string
+              status:
+                type: string
+              related_variations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    screenshot:
+                      properties:
+                        large_preview:
+                          type: string
+                          format: url
+                        large_thumb:
+                          type: string
+                          format: url
+                        small_thumb:
+                          type: string
+                          format: url
+              theme_type:
+                type: string
+                enum:
+                  - blueprint
+                  - stencil
+              is_current:
+                type: boolean
+              is_purchased:
+                type: boolean
+              is_customized:
+                type: boolean
+              has_update_available:
+                type: boolean
+              variation_count:
+                type: integer
+              context:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  theme:
+                    type: string
+                  custom_base_path:
+                    type: string
+        '204':
+          description: No content
+        '400':
+          description: 'invalid input (misconfiguration, bad data, or provider error)'
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              title:
+                type: string
+              type:
+                type: string
+        '422':
+          description: Invalid input (missing or over-length fields)
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              title:
+                type: string
+              type:
+                type: string
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              title:
+                type: string
+              type:
+                type: string
